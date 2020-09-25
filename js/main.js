@@ -67,8 +67,8 @@ function generateTagListeners() {
 }
 //SEARCH ACTION
 SearchPurple.addEventListener("click", () => {searchStart()});
-SearchBar.addEventListener("keypress", (e) => {
-  if (e.charCode === 13) {
+SearchBar.addEventListener("keypress", (input) => {
+  if (input.charCode === 13) {
     searchStart()
   }
 });
