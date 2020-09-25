@@ -19,6 +19,9 @@ const NavUL = document.querySelector(".nav_container_items");
 const TrendingTags = document.querySelector(".hero_trending_tags");
 //*SEARCHBAR
 const SearchBar = document.querySelector(".searchbar");
+const SearchPurple = document.querySelector(".searchIconPurple");
+const SearchGray = document.querySelector(".searchIconGray");
+const SearchClose = document.querySelector(".searchClose");
 //*SEARCH RESULTS
 const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION
@@ -62,7 +65,11 @@ function generateTagListeners() {
     })  
   }
 }
-
+//SEARCH ACTION
+SearchPurple.addEventListener("click", () => {searchStart()});
+SearchGray.addEventListener("click", () => {searchStart()});
+SearchBar.addEventListener("focus", () => {searchActive()});
+SearchBar.addEventListener("focusout", () => {searchDisable()});
 
 
 //*TRENDING ARROWS

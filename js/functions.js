@@ -97,6 +97,19 @@ function renderTrendingGifos(offset) {
 //!-----------------------------------------
 //!SEARCH
 //!-----------------------------------------
+//*SEARCH FOCUS
+function searchActive() {
+  SearchPurple.classList.add("hidden");
+  SearchClose.classList.remove("hidden");
+  SearchGray.classList.remove("hidden");
+}
+
+function searchDisable() {
+  SearchPurple.classList.remove("hidden");
+  SearchClose.classList.add("hidden");
+  SearchGray.classList.add("hidden");
+}
+
 //*CALL API
 function searchStart() {
   if (SearchBar.value != "") {
@@ -121,9 +134,11 @@ function fillSearchedGifos(array) {
 
 //*RENDER SEARCHED GIFOS
 function renderSearchedGifos(array) {
-  SearchSection.innerHTML = "";
   //ONLY IF IT'S THE 1ST TIME
   if (offsetS == 0) {
+    //CLEAN 
+    SearchSection.innerHTML = " ";
+    SearchedGIFOS = [];
     //LINE
     hr = document.createElement("hr");
     SearchSection.appendChild(hr);
