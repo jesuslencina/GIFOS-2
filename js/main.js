@@ -4,7 +4,9 @@
 var darkModeEnabled = false;
 var burgerOpen = false;
 var sliderOffset = 0;
+var offsetS = 0;
 var TrendingGIFOS = [];
+var SearchedGIFOS = [];
 //!-----------------------------------------
 //!SELECTORS
 //!-----------------------------------------
@@ -15,10 +17,12 @@ const NavBurger = document.querySelector(".nav_container_burger");
 const NavUL = document.querySelector(".nav_container_items");
 //*HERO
 const TrendingTags = document.querySelector(".hero_trending_tags");
+//*SEARCHBAR
+const SearchBar = document.querySelector(".searchbar");
+//*SEARCH RESULTS
+const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION
-const TrendingGifosContainer = document.querySelector(
-  ".trending_gifos_gifos_container"
-);
+const TrendingGifosContainer = document.querySelector(".trending_gifos_gifos_container");
 const TrendingRightArrow = document.getElementById("right_arrow");
 const TrendingLeftArrow = document.getElementById("left_arrow");
 //!-----------------------------------------

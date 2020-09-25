@@ -37,3 +37,14 @@ async function trending() {
         })
         .catch(err => console.log(err))
 }
+
+//!GET SEARCHED GIFOS
+async function search(input) {
+    await fetch(apiEndpointSearch + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 12 + "&offset="+ offsetS + "&rating=g")
+    .then(response => { return (response.json()) })
+        .then(json => {
+            console.log(json);
+            fillSearchedGifos(json.data);
+        })
+        .catch(err => console.log(err))
+}

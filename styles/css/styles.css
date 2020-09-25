@@ -170,7 +170,6 @@ h1, h2, h3, h4, h5, h6, p, span, a {
   height: 17rem;
   position: absolute;
   top: 0;
-  left: 1rem;
   z-index: 8;
   background-color: #562ee5b2;
   cursor: pointer;
@@ -498,6 +497,51 @@ body.darkMode .hero_h1 {
         -ms-grid-row-align: center;
         align-self: center;
   }
+}
+
+.search_results {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.search_results hr {
+  color: #37383C;
+  width: 12rem;
+  margin-top: 3.5rem;
+}
+
+.search_results h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
+  color: #572EE5;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 5rem;
+  margin-bottom: 3.5rem;
+  text-transform: capitalize;
+}
+
+.search_results .gifo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.75em;
+}
+
+.search_results .gifo .gifoHover {
+  top: 0.8em;
+  left: 0.75em;
 }
 
 .trending_gifos {
