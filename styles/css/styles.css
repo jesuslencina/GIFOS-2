@@ -156,9 +156,92 @@ h1, h2, h3, h4, h5, h6, p, span, a {
   top: 35%;
 }
 
+.gifo {
+  position: relative;
+}
+
+.gifo img {
+  width: 300px;
+  height: 220px;
+}
+
+.gifo .gifoHover {
+  width: 300px;
+  height: 220px;
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  background-color: #572EE5;
+  cursor: pointer;
+}
+
+.gifo .gifoHover p {
+  position: absolute;
+  left: 1rem;
+}
+
+.gifo .gifoHover .gifo_user {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: white;
+  bottom: 4rem;
+}
+
+.gifo .gifoHover .gifo_title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: white;
+  bottom: 2rem;
+  max-height: 1em;
+  line-height: 1.2em;
+}
+
+.gifo .gifoHover .gifo_buttonbar {
+  position: absolute;
+  right: 0;
+  width: 8rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.gifo .gifoHover .gifo_buttonbar img {
+  width: 2rem;
+  height: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.gifo .gifoHover .gifo_buttonbar img:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.gifo .gifoHover .gifo_buttonbar .buttonAnimation {
+  -webkit-animation: animate_buttons 1s ease-in-out;
+          animation: animate_buttons 1s ease-in-out;
+}
+
 @media screen and (max-width: 800px) {
   .search_container {
     width: 90%;
+  }
+  .gifo img {
+    width: 200px;
+    height: 120px;
+  }
+  .gifo .gifoHover {
+    display: none;
   }
 }
 
@@ -384,6 +467,7 @@ body.darkMode .hero_h1 {
 }
 
 .hero_trending_tags span {
+  text-transform: capitalize;
   line-height: 2em;
 }
 

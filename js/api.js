@@ -10,6 +10,7 @@ const apiEndpointTrendingTags = "https://api.giphy.com/v1/trending/searches";
 //!EXECUTION
 //!---------------------------------------------------------------------------
 trendingTags();
+trending();
 //!---------------------------------------------------------------------------
 //!FUNCTIONS
 //!---------------------------------------------------------------------------
@@ -24,3 +25,14 @@ async function trendingTags() {
         })
         .catch(err => console.log(err))
     }
+
+//!GET TRENDING GIFOS
+async function trending() {
+    await fetch(apiEndpointTrending + "?api_key=" + apiKey + "&limit=" + 9 + "&rating=g")
+        .then(response => { return (response.json()) })
+        .then(json => {
+            console.log(json);
+            fillTrendingGifos(json.data);
+        })
+        .catch(err => console.log(err))
+}

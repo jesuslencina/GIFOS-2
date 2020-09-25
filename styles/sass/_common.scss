@@ -91,9 +91,85 @@
       top: 35%;
     }
   }
-  
+
+//!GIFO & HOVER
+.gifo {
+  img {
+    width: 300px;
+    height: 220px;
+  }
+  position: relative;
+  //HOVER
+  .gifoHover {
+    width:300px;
+    height: 220px;
+    position: absolute;
+    top: 0;
+    z-index: 8;
+    background-color: $Purple;
+    cursor: pointer;
+    //BOTH AUTHOR AND TITLE
+    p{
+      position: absolute;
+      left: 1rem;
+    }
+    //GIFO's AUTHOR 
+    .gifo_user{
+      font-family: $Roboto;
+      font-weight: $Regular;
+      font-size: 15px;
+      color: $White;
+      bottom: 4rem;
+    }
+    //GIFO's TITLE
+    .gifo_title{
+      font-family: $Roboto;
+      font-weight: $Bold;
+      font-size: 16px;
+      color: $White;
+      bottom: 2rem;
+      max-height: 1em;
+      line-height: 1.2em;
+    
+    }
+    //GIFO's ACTION BUTTONS
+    .gifo_buttonbar {
+      position: absolute;
+      right: 0;
+      width: 8rem;
+      height: 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      //INDIVIDUAL BUTTONS
+      img {
+        width: 2rem;
+        height: auto;
+        height: fit-content;
+        &:hover {
+          cursor: grab;
+        }
+      }
+      .buttonAnimation{
+        animation: animate_buttons 1s ease-in-out;
+      }
+    }
+  }
+}
+
+
 @media screen and (max-width: $Query){
     .search_container{
         width: 90%;
+    }
+
+    .gifo {
+      img {
+        width: 200px;
+        height: 120px;
+      }
+      .gifoHover {
+        display: none;
+      }
     }
 }
