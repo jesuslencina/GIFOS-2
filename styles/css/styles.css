@@ -196,6 +196,10 @@ body.darkMode .nav {
   display: flex;
 }
 
+.nav_container hr {
+  display: none;
+}
+
 .nav_container_items {
   margin-top: 0.5em;
   display: -webkit-box;
@@ -276,11 +280,19 @@ body.darkMode .nav_container_items_item a {
     padding-bottom: 1rem;
     width: 30px;
   }
+  .nav_container hr {
+    display: block;
+    color: #37383C;
+    width: 16%;
+  }
   .nav_container_items {
     display: none;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     position: absolute;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -295,7 +307,8 @@ body.darkMode .nav_container_items_item a {
     opacity: 90%;
   }
   .nav_container_items li {
-    padding-top: 1.38rem;
+    margin-top: 1.38rem;
+    margin-bottom: 1.38rem;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -370,7 +383,16 @@ body.darkMode .hero_h1 {
   margin-top: 0.5rem;
 }
 
-.hero_trending_tags:hover {
+.hero_trending_tags span {
+  line-height: 2em;
+}
+
+.hero_trending_tags span::after {
+  content: ",  ";
+  white-space: pre;
+}
+
+.hero_trending_tags span:hover {
   cursor: pointer;
   -webkit-filter: brightness(2);
           filter: brightness(2);

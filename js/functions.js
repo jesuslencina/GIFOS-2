@@ -25,3 +25,19 @@ NavBurger.addEventListener("click", () => {
     }
   }
 });
+
+//!-----------------------------------------
+//!TRENDING
+//!-----------------------------------------
+//*FILL TRENDING TAGS
+function fillTrendingTags(array) {
+    //DELETE PLACEHOLDER
+    TrendingTags.innerHTML = "";
+    //CREATE & APPEND ALL ELEMENTS
+    for (let i = 0; i < 5; i++) {
+        let tag = document.createElement("span");
+        tag.classList.add("trending_tag");
+        tag.innerHTML = array[i];
+        TrendingTags.appendChild(tag);
+    }
+}

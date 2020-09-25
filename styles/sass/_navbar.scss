@@ -26,6 +26,10 @@
 
   &_container {
     display: flex;
+    //*LINES
+    hr{
+      display: none;
+    }
     //*UL
     &_items {
       //
@@ -107,10 +111,16 @@
       width: 30px;
     }
     &_container {
+      hr{
+        display: block;
+        color: $Gray;
+        width: 16%;
+      }
       &_items {
         display: none;
         //
         align-items: center;
+        justify-content: flex-start;
         position: absolute;
         flex-direction: column;
         left: 0;
@@ -121,7 +131,8 @@
         background-color: $Purple;
         opacity: 90%;
         li {
-          padding-top: $MarginGeneralMobile;
+          margin-top: $MarginGeneralMobile;
+          margin-bottom: $MarginGeneralMobile;
           width: 100%;
           display: flex;
           justify-content: center;

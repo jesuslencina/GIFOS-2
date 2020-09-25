@@ -10,19 +10,19 @@
     color: $Purple;
     text-align: center;
     width: 40%;
-    &_span{
-        color: $Cyan;
+    &_span {
+      color: $Cyan;
     }
     //!DARK MODE
     body.darkMode & {
       color: white;
     }
   }
-  &_img{
-      margin-top: 1.5rem;
+  &_img {
+    margin-top: 1.5rem;
   }
   //*TRENDING TAGS
-  &_h3{
+  &_h3 {
     font-family: $Montserrat;
     font-weight: $Bold;
     font-size: 18px;
@@ -31,38 +31,43 @@
     margin-top: 6rem;
   }
 
-  &_trending_tags{
+  &_trending_tags {
     font-family: $Montserrat;
     font-weight: $Medium;
     font-size: 16px;
     color: $Purple;
     text-align: center;
     margin-top: 0.5rem;
-    &:hover{
-      cursor: pointer;
-      filter: brightness(2);
-      border-bottom: 1pt solid $Purple;
+    span {
+      line-height: 2em;
+      &::after{
+        content: ",  ";
+        white-space: pre;
+      }
+      &:hover {
+        cursor: pointer;
+        filter: brightness(2);
+        border-bottom: 1pt solid $Purple;
+      }
     }
   }
 }
 
 @media screen and (max-width: $Query) {
-    .hero {
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 8.75rem;
-      width: 100%;
-      &_h1 {
-          font-size: 25px;
-          width: 75%;
-          align-self: center;
-      }
-  
-      &_img{
-         width: 75%;
-         align-self: center;
-      }
-     
+  .hero {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 8.75rem;
+    width: 100%;
+    &_h1 {
+      font-size: 25px;
+      width: 75%;
+      align-self: center;
     }
-    
+
+    &_img {
+      width: 75%;
+      align-self: center;
+    }
   }
+}
