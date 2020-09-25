@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6, p, span, a {
   -ms-flex-item-align: center;
       align-self: center;
   position: relative;
-  width: 45%;
+  width: 34rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,10 +251,6 @@ body.darkMode .nav_container_items_item a {
   margin-left: 2rem;
 }
 
-.nav_container_button_container #BtnCrearGifo1 {
-  z-index: 2;
-}
-
 .nav_container_button_container #BtnCrearGifo1:hover {
   -webkit-animation-name: gifo_create_button;
           animation-name: gifo_create_button;
@@ -291,7 +287,7 @@ body.darkMode .nav_container_items_item a {
         -ms-flex-direction: column;
             flex-direction: column;
     left: 0;
-    top: 4rem;
+    top: 3.5rem;
     width: 100%;
     height: 1000%;
     z-index: 10;
