@@ -45,7 +45,9 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
+    .gifoHover{
+      left: 1rem;
+    }
     img {
       margin-left: 1rem;
       margin-right: 1rem;

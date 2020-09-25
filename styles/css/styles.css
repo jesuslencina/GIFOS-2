@@ -615,6 +615,10 @@ body.darkMode .hero_h1 {
           justify-content: space-evenly;
 }
 
+.trending_gifos_gifos_container .gifoHover {
+  left: 1rem;
+}
+
 .trending_gifos_gifos_container img {
   margin-left: 1rem;
   margin-right: 1rem;
