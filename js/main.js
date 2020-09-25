@@ -53,6 +53,18 @@ NavBurger.addEventListener("click", () => {
   }
 });
 
+//*SEARCH
+//TRENDING TAGS
+function generateTagListeners() {
+  for (let i = 0; i < 5; i++) {
+    TrendingTags.querySelectorAll(".trending_tag")[i].addEventListener("click", () => {
+      SearchBar.value = TrendingTags.querySelectorAll(".trending_tag")[i].innerHTML;
+    })  
+  }
+}
+
+
+
 //*TRENDING ARROWS
 TrendingRightArrow.addEventListener("click", () => {
   if (sliderOffset < 6) {

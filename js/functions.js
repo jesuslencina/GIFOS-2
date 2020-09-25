@@ -57,6 +57,7 @@ function fillTrendingTags(array) {
     tag.innerHTML = array[i];
     TrendingTags.appendChild(tag);
   }
+  generateTagListeners();
 }
 
 //*FILL TRENDING GIFOS
