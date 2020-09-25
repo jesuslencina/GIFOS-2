@@ -64,6 +64,7 @@
       }
       &_arrow_container{
         overflow-x: scroll;
+        width: 100vw;
         justify-content: flex-start;
         #left_arrow{
           display: none;

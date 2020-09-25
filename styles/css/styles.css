@@ -593,6 +593,7 @@ body.darkMode .hero_h1 {
   }
   .trending_gifos .trending_gifos_arrow_container {
     overflow-x: scroll;
+    width: 100vw;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
