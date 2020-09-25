@@ -1,30 +1,7 @@
 //!-----------------------------------------
 //!MISC
 //!-----------------------------------------
-//*BURGER MENU
-NavBurger.addEventListener("click", () => {
-    //CHECK IF CLOSED
-    if (burgerOpen == false) {
-        NavUL.style.display = "flex";
-        burgerOpen = true;
-        //CHECK FOR DARK MODE
-        if (darkModeEnabled == false) {
-            NavBurger.src = "assets/close.svg";
-        } else {
-            NavBurger.src = "assets/close-modo-noct.svg";
-        }
-    } else {
-        //IF ALREADY OPEN
-        NavUL.style.display = "none";
-        burgerOpen = false;
-        //CHECK FOR DARK MODE
-        if (darkModeEnabled == false) {
-            NavBurger.src = "assets/burger.svg";
-        } else {
-            NavBurger.src = "assets/burger-modo-noct.svg";
-        }
-    }
-});
+
 
 //!-----------------------------------------
 //!TRENDING
@@ -43,11 +20,17 @@ function fillTrendingTags(array) {
 }
 
 //*FILL TRENDING GIFOS
-function fillTrendingGifos(array) {
+function generateTrendingGifos(array) {
    
     for (let i = 0; i < 9; i++) {
         //CALL CONSTRUCTOR
-        TrendingGIFOS[i] = new GIFO(i, array[i].username, array[i].title, array[i].images.original.url)
+        TrendingGIFOS[i] = new GIFO(i, array[i].username, array[i].title, array[i].images.original.url);
+    }
+}
+
+function renderGifos(offset){
+    TrendingGifosContainer.innerHTML="";
+    for (let i = offset; i < offset + 3; i++) {
         //GENERATE OBJECT
         gifo = document.createElement("div")
         gifo.classList.add("gifo");
@@ -63,5 +46,6 @@ function fillTrendingGifos(array) {
             <p class="gifo_title">Title</p>
         </div>`;
         TrendingGifosContainer.appendChild(gifo);
+        
     }
 }

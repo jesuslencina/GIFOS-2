@@ -32,7 +32,8 @@ async function trending() {
         .then(response => { return (response.json()) })
         .then(json => {
             console.log(json);
-            fillTrendingGifos(json.data);
+            generateTrendingGifos(json.data);
+            renderGifos(0);
         })
         .catch(err => console.log(err))
 }

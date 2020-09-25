@@ -161,13 +161,13 @@ h1, h2, h3, h4, h5, h6, p, span, a {
 }
 
 .gifo img {
-  width: 300px;
-  height: 220px;
+  width: 22rem;
+  height: 17rem;
 }
 
 .gifo .gifoHover {
-  width: 300px;
-  height: 220px;
+  width: 22rem;
+  height: 17rem;
   position: absolute;
   top: 0;
   z-index: 8;
@@ -562,6 +562,23 @@ body.darkMode .hero_h1 {
 .trending_gifos_arrow_container_item {
   margin-right: 1em;
   margin-left: 1em;
+}
+
+.trending_gifos_gifos_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.trending_gifos_gifos_container img {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 @media screen and (max-width: 800px) {
