@@ -1,0 +1,135 @@
+////NAVBAR
+.nav {
+  //DISPLAY
+  position: sticky;
+  width: 100%;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  //STYLE
+  border-top: 4pt solid $Purple;
+  background-color: $White;
+
+  //!DARKMODE
+  body.darkMode & {
+    border-top-color: $Black;
+    background-color: $Gray;
+  }
+
+  //*LOGO
+  &_logo {
+    margin-left: $MarginGeneral;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  &_container {
+    display: flex;
+    //*UL
+    &_items {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      //*LI
+      &_item {
+        height: fit-content;
+        list-style: none;
+        font-family: $Montserrat;
+        font-weight: $Bold;
+        margin-right: 1.25rem;
+        margin-left: 1.25rem;
+        //*ANCHOR
+        a {
+          text-decoration: none;
+          color: $Purple;
+          font-size: 13px;
+          transition: color 1s ease-in-out;
+          //!DARKMODE
+          body.darkMode & {
+            color: $White;
+          }
+
+          &:hover {
+            animation: nav_links 0.5s ease-in-out;
+            border-bottom: 1.5pt solid $Cyan;
+          }
+
+          &:active {
+            color: $SemiLightGray;
+          }
+        }
+      }
+    }
+
+    //*BURGER MENU
+    &_burger {
+      display: none;
+    }
+    //*BUTTON
+    &_button_container {
+      margin-right: $MarginGeneral;
+      position: relative;
+      margin-left: 2rem;
+      //*WHITE BUTTON
+      #BtnCrearGifo1 {
+        z-index: 2;
+        &:hover {
+          animation-name: gifo_create_button;
+          animation-duration: 1s;
+          animation-fill-mode: both;
+          cursor: pointer;
+        }
+      }
+      #BtnCrearGifo2 {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $Query) {
+  .nav {
+    &_logo {
+      margin-left: $MarginGeneralMobile;
+      padding-bottom: 1rem;
+      width: 30px;
+    }
+    &_container {
+      &_items {
+        display: none;
+        //
+        align-items: center;
+        position: absolute;
+        flex-direction: column;
+        left: 0;
+        top: 4rem;
+        width: 100%;
+        height: 1000%;
+        z-index: 10;
+        background-color: $Purple;
+        opacity: 90%;
+        li {
+          padding-top: $MarginGeneralMobile;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          a {
+            color: $White;
+            font-size: 15px;
+            border-bottom: $White;
+          }
+        }
+      }
+      &_button_container {
+        display: none;
+      }
+      &_burger {
+        display: block;
+      }
+    }
+  }
+}

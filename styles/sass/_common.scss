@@ -1,0 +1,34 @@
+//!ANIMATIONS
+//*CREATE GIFO
+@keyframes gifo_create_button {
+  0% {
+    transform: rotate(0deg);
+    filter: opacity(100%);
+  }
+  25% {
+    transform: rotate(-90deg);
+    filter: opacity(100%);
+  }
+  50% {
+    transform: rotate(90deg);
+    filter: opacity(100%);
+  }
+  75% {
+    transform: rotate(90deg);
+    filter: opacity(50%);
+  }
+  100% {
+    transform: rotate(0deg);
+    filter: opacity(0%);
+  }
+}
+
+//*NAVLINKS
+@keyframes nav_links {
+  from {
+    border-color: olivedrab;
+  }
+  to {
+    border-color: $Cyan;
+  }
+}

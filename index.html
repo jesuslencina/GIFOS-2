@@ -10,6 +10,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Roboto:wght@400;500;700;900&display=swap"
         rel="stylesheet">
     <!--//CSS-->
+    <link rel="stylesheet" href="styles/css/styles.css">
 </head>
 
 <body>
@@ -49,25 +50,30 @@
             </g>
         </svg>
         <!--*NAVBAR ITEMS-->
-        <ul class="nav_items">
-            <li class="nav_items_item" id="BtnDarkMode"><a href="#">NOCTURNO</a></li>
-            <li class="nav_items_item"><a href="">FAVORITOS</a></li>
-            <li class="nav_items_item"><a href="">MIS GIFOS</a></li>
-        </ul>
-        <!--*BURGER MENU-->
-        <img src="assets/burger.svg" alt="Menú hamurguesa" class="menu_hamburguesa" id="BtnBurgerMenu">
-        <!--*PLUS BUTTON-->
-        <!--!BUTTON CONTAINER (CONTAINS THE 2 VARIANTS)-->
-        <div class="nav_button_container">
-            <img src="assets/button-crear-gifo.svg" alt="Botón para crear GIFO" class="nav_button" id="BtnCrearGifo1">
-            <img src="assets/CTA-crear-gifo-hover.svg" alt="Botón para crear GIFO" class="nav_button" id="BtnCrearGifo2">
+        <!--!UL & BUTTON CONTAINER-->
+        <div class="nav_container">
+            <ul class="nav_container_items">
+                <li class="nav_container_items_item" id="BtnDarkMode"><a href="#">NOCTURNO</a></li>
+                <li class="nav_container_items_item"><a href="">FAVORITOS</a></li>
+                <li class="nav_container_items_item"><a href="">MIS GIFOS</a></li>
+            </ul>
+            <!--*BURGER MENU-->
+            <img src="assets/burger.svg" alt="Menú hamurguesa" class="nav_container_burger">
+            <!--*PLUS BUTTON-->
+            <!--!BUTTON CONTAINER (CONTAINS THE 2 VARIANTS)-->
+            <div class="nav_container_button_container">
+                <img src="assets/button-crear-gifo.svg" alt="Botón para crear GIFO" class="nav_button"
+                    id="BtnCrearGifo1">
+                <img src="assets/CTA-crear-gifo-hover.svg" alt="Botón para crear GIFO" class="nav_button"
+                    id="BtnCrearGifo2">
+            </div>
         </div>
     </nav>
     <!--//HERO-->
-    <section id="hero">
+    <section class="hero">
         <!--*HEADER-->
-        <h1 id="hero_h1">Inspírate, busca, guarda, y crea los mejores <span id="hero_h1_span">GIFOS</span></h1>
-        <img src="assets/ilustra_header.svg" alt="Personas saludando" id="hero_img">
+        <h1 class="hero_h1">Inspírate, busca, guarda, y crea los mejores <span class="hero_h1_span">GIFOS</span></h1>
+        <img src="assets/ilustra_header.svg" alt="Personas saludando" class="hero_img">
         <!--*SEARCHBAR INPUT-->
         <div class="search_container">
             <!--MAGNFIERS-->
@@ -78,40 +84,45 @@
             <input type="text" placeholder="Busca GIFOS y más" class="searchbar">
         </div>
         <!--*TRENDING TAGS-->
-        <h3 id="hero_h3">Trending:</h3>
-        <p id="hero_trending_tags"><span class="trending_tag">Placeholder</span></p>
+        <h3 class="hero_h3">Trending:</h3>
+        <p class="hero_trending_tags"><span class="trending_tag">Placeholder</span></p>
     </section>
     <!--//SEARCH RESULTS-->
-    <section id="search_results" class="hidden"></section>
+    <section class="search_results hidden"></section>
     <!--//TRENDING GIFOS SECTION-->
-    <section id="trending_gifos">
+    <section class="trending_gifos">
         <!--*HEADER-->
-        <h2 id="trending_gifos_h2">Trending GIFOS</h2>
-        <p id="trending_gifos_p">Mira los últimos GIFO de nuestra comunidad.</p>
+        <h2 class="trending_gifos_h2">Trending GIFOS</h2>
+        <p class="trending_gifos_p">Mira los últimos GIFO de nuestra comunidad.</p>
         <!--*ARROWS CONTAINER-->
-        <div id="trending_gifos_arrows_container">
+        <div class="trending_gifos_arrows_container">
             <!--LEFT ARROW-->
-            <img src="assets/button-slider-left.svg" alt="Botón para mover slider a la izquierda" class="trending_gifos_button" id="left_arrow">
+            <img src="assets/button-slider-left.svg" alt="Botón para mover slider a la izquierda"
+                class="trending_gifos_button" id="left_arrow">
             <!--*GIFOS CONTAINER-->
-            <div id="trending_gifos_gifos_container">
+            <div class="trending_gifos_gifos_container">
 
             </div>
             <!--RIGHT ARROW-->
-            <img src="assets/Button-Slider-right.svg" alt="Botón para mover slider a la derecha" class="trending_gifos_button" id="right_arrow">
+            <img src="assets/Button-Slider-right.svg" alt="Botón para mover slider a la derecha"
+                class="trending_gifos_button" id="right_arrow">
         </div>
     </section>
     <!--//FOOTER-->
-    <footer id="footer">
-        <div id="footer_share">
+    <footer class="footer">
+        <div class="footer_share">
             <p>Compartir en:</p>
-            <div id="footer_share_buttons">
-                <img class="footer_share_buttons_item" src="assets/icon_facebook.svg" alt="Botón para compartir en Facebook">
-                <img class="footer_share_buttons_item" src="assets/icon-twitter.svg" alt="Botón para compartir en Twitter">
-                <img class="footer_share_buttons_item" src="assets/icon_instagram.svg" alt="Botón para compartir en Instagram">
+            <div class="footer_share_buttons">
+                <img class="footer_share_buttons_item" src="assets/icon_facebook.svg"
+                    alt="Botón para compartir en Facebook">
+                <img class="footer_share_buttons_item" src="assets/icon-twitter.svg"
+                    alt="Botón para compartir en Twitter">
+                <img class="footer_share_buttons_item" src="assets/icon_instagram.svg"
+                    alt="Botón para compartir en Instagram">
             </div>
         </div>
-         <!--//COPYRIGHT-->
-         <p class="footer_copyright">© GIFOS 2020 All Rights Reserved.</p>
+        <!--//COPYRIGHT-->
+        <p class="footer_copyright">© GIFOS 2020 All Rights Reserved.</p>
     </footer>
 </body>
 
