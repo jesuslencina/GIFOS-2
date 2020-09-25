@@ -45,7 +45,7 @@
           text-decoration: none;
           color: $Purple;
           font-size: 13px;
-          transition: color 1s ease-in-out;
+
           //!DARKMODE
           body.darkMode & {
             color: $White;
@@ -129,6 +129,7 @@
       }
       &_burger {
         display: block;
+        margin-right: $MarginGeneralMobile;
       }
     }
   }
