@@ -51,7 +51,7 @@
     }
   }
   //MEDIA QUERY
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: $Query) {
     .trending_gifos {
       &_h2 {
         font-size: 20px;
@@ -63,8 +63,7 @@
         text-align: center;
       }
       &_arrow_container{
-        overflow: scroll;
-        width: 100vw;
+        overflow-x: scroll;
         justify-content: flex-start;
         #left_arrow{
           display: none;

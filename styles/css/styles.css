@@ -170,8 +170,9 @@ h1, h2, h3, h4, h5, h6, p, span, a {
   height: 17rem;
   position: absolute;
   top: 0;
+  left: 1rem;
   z-index: 8;
-  background-color: #572EE5;
+  background-color: #562ee5b2;
   cursor: pointer;
 }
 
@@ -591,8 +592,7 @@ body.darkMode .hero_h1 {
     text-align: center;
   }
   .trending_gifos .trending_gifos_arrow_container {
-    overflow: scroll;
-    width: 100vw;
+    overflow-x: scroll;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;

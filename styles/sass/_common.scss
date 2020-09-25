@@ -94,19 +94,21 @@
 
 //!GIFO & HOVER
 .gifo {
+  position: relative;
   img {
     width: 22rem;
     height: 17rem;
   }
-  position: relative;
+  
   //HOVER
   .gifoHover {
     width: 22rem;
     height: 17rem;
     position: absolute;
     top: 0;
+    left: 1rem;
     z-index: 8;
-    background-color: $Purple;
+    background-color: $PurpleDimmed;
     cursor: pointer;
     //BOTH AUTHOR AND TITLE
     p{

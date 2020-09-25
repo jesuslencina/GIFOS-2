@@ -56,7 +56,7 @@ TrendingRightArrow.addEventListener("click", () => {
   }else{
     sliderOffset = 0;
   }
-  renderGifos(sliderOffset)
+  renderTrendingGifos(sliderOffset)
 });
 
 TrendingLeftArrow.addEventListener("click", () => {
@@ -65,7 +65,7 @@ TrendingLeftArrow.addEventListener("click", () => {
       }else{
         sliderOffset = 6;
       }
-      renderGifos(sliderOffset)
+      renderTrendingGifos(sliderOffset)
   });
   
 //!-----------------------------------------
