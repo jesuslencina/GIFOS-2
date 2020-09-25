@@ -124,10 +124,10 @@ function renderSearchedGifos(array) {
   //ONLY IF IT'S THE 1ST TIME
   if (offsetS == 0) {
     //LINE
-    hr = document.createElement("HR");
+    hr = document.createElement("hr");
     SearchSection.appendChild(hr);
     //H3
-    h3 = document.createElement("H3");
+    h3 = document.createElement("h3");
     h3.innerHTML = SearchBar.value;
     SearchSection.appendChild(h3);
   }
