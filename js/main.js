@@ -67,9 +67,14 @@ function generateTagListeners() {
 }
 //SEARCH ACTION
 SearchPurple.addEventListener("click", () => {searchStart()});
-SearchGray.addEventListener("click", () => {searchStart()});
+SearchBar.addEventListener("keypress", (e) => {
+  if (e.charCode === 13) {
+    searchStart()
+  }
+});
 SearchBar.addEventListener("focus", () => {searchActive()});
-SearchBar.addEventListener("focusout", () => {searchDisable()});
+SearchGray.addEventListener("click", () => {searchStart()});
+SearchClose.addEventListener("click", () => {searchDisable()});
 
 
 //*TRENDING ARROWS
