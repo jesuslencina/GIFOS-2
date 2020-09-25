@@ -132,28 +132,25 @@
       bottom: 2rem;
       max-height: 1em;
       line-height: 1.2em;
-    
     }
     //GIFO's ACTION BUTTONS
     .gifo_buttonbar {
       position: absolute;
       right: 0;
-      width: 8rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: flex-end;
       //INDIVIDUAL BUTTONS
       img {
-        width: 2rem;
-        height: auto;
-        height: fit-content;
+        width: 4rem;
+        height: 4rem;
+        margin-right: 0.2rem;
+        margin-left: 0.2rem;
         &:hover {
           cursor: grab;
         }
-      }
-      .buttonAnimation{
-        animation: animate_buttons 1s ease-in-out;
       }
     }
   }
