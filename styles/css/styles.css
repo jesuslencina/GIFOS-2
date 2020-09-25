@@ -237,8 +237,8 @@ h1, h2, h3, h4, h5, h6, p, span, a {
     width: 90%;
   }
   .gifo img {
-    width: 200px;
-    height: 120px;
+    width: 15rem;
+    height: 11rem;
   }
   .gifo .gifoHover {
     display: none;
@@ -590,16 +590,14 @@ body.darkMode .hero_h1 {
     width: 75%;
     text-align: center;
   }
-  .trending_gifos_gifos {
+  .trending_gifos .trending_gifos_arrow_container {
+    overflow: scroll;
+    width: 100vw;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    overflow-x: scroll;
   }
-  .trending_gifos_gifos_button:first-child {
+  .trending_gifos .trending_gifos_arrow_container #left_arrow {
     display: none;
   }
 }

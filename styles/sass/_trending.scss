@@ -41,11 +41,11 @@
       margin-left: 1em;
     }
   }
-  &_gifos_container{
+  &_gifos_container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    img{
+    img {
       margin-left: 1rem;
       margin-right: 1rem;
     }
@@ -62,16 +62,16 @@
         width: 75%;
         text-align: center;
       }
-    }
-    &_gifos {
-      justify-content: flex-start;
-      align-items: center;
-      overflow-x: scroll;
-      &_button {
-        &:first-child {
+      &_arrow_container{
+        overflow: scroll;
+        width: 100vw;
+        justify-content: flex-start;
+        #left_arrow{
           display: none;
         }
       }
+     
+    
     }
   }
 }
