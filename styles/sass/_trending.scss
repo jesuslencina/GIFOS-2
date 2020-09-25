@@ -1,0 +1,69 @@
+//TRENDING SECTION
+.trending_gifos {
+  background-color: $LightGray;
+  margin-top: 6rem;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //HEADER
+  &_h2 {
+    font-family: $Montserrat;
+    font-weight: $Bold;
+    font-size: 25px;
+    color: $Purple;
+  }
+
+  &_p {
+    font-family: $Roboto;
+    font-weight: $Regular;
+    font-size: 18px;
+    margin-top: 0.75rem;
+  }
+
+  //GIFOS DISPLAY
+  &_arrow_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+
+    &_button {
+      height: fit-content;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &_item {
+      margin-right: 1em;
+      margin-left: 1em;
+    }
+  }
+
+  //MEDIA QUERY
+  @media screen and (max-width: 800px) {
+    .trending_gifos {
+      &_h2 {
+        font-size: 20px;
+      }
+
+      &_p {
+        font-size: 16px;
+        width: 75%;
+        text-align: center;
+      }
+    }
+    &_gifos {
+      justify-content: flex-start;
+      align-items: center;
+      overflow-x: scroll;
+      &_button {
+        &:first-child {
+          display: none;
+        }
+      }
+    }
+  }
+}

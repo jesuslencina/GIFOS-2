@@ -1,7 +1,8 @@
 ////NAVBAR
 .nav {
   //DISPLAY
-  position: sticky;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 9;
   display: flex;
@@ -21,13 +22,15 @@
   &_logo {
     margin-left: $MarginGeneral;
     padding-top: 1em;
-    padding-bottom: 1em;
   }
 
   &_container {
     display: flex;
     //*UL
     &_items {
+      //
+      margin-top: 0.5em;
+      //
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -69,6 +72,9 @@
     }
     //*BUTTON
     &_button_container {
+      //
+      margin-top: 1em;
+      //
       margin-right: $MarginGeneral;
       position: relative;
       margin-left: 2rem;
@@ -93,6 +99,9 @@
 
 @media screen and (max-width: $Query) {
   .nav {
+    //
+    height: 4rem;
+    //
     &_logo {
       margin-left: $MarginGeneralMobile;
       padding-bottom: 1rem;
