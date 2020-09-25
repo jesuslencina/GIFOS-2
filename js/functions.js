@@ -113,6 +113,10 @@ function searchDisable() {
 //*CALL API
 function searchStart() {
   if (SearchBar.value != "") {
+    //CLEAN 
+    offsetS = 0;
+    SearchSection.innerHTML = "";
+    SearchedGIFOS = [];
     //HIDE TRENDING TAGS
     document.querySelector(".hero_h3").classList.add("hidden");
     document.querySelector(".hero_trending_tags").classList.add("hidden");
@@ -163,5 +167,19 @@ function renderSearchedGifos(array) {
         <p class="gifo_title">${array[i].title}</p>`;
     SearchSection.appendChild(div);
     generateGifoListeners(div);
+  }
+  //VIEW MORE
+  if (array.length > 11) {
+    //CREATE ELEMENT
+    let button = document.createElement("button");
+    button.classList.add("verMAS");
+    button.innerHTML = "VER MÁS";
+    
+    //*ACTUAL ACTION
+    button.addEventListener("click", () => {
+      offsetS = offsetS + 12;
+      search(SearchBar.value);
+    });
+    SearchSection.append(button);
   }
 }
