@@ -2,19 +2,33 @@
 //!MISC
 //!-----------------------------------------
 //*ACTIVATE DARK MODE
-function enableDarkMode(){
-    if (darkModeEnabled == false){
-      ButtonDarkMode.innerHTML = `<a href="#">MODO DIURNO</a>`
-      document.body.classList.add("darkMode");
-      darkModeEnabled = true;
-      logo.src = "assets/Logo-modo-noc.png";
-    }else{
-      ButtonDarkMode.innerHTML = `<a href="#">MODO NOCTURNO</a>`
-      document.body.classList.remove("darkMode");
-      darkModeEnabled = false;
-      logo.src = "assets/logo-desktop.png";
-    }
+function enableDarkMode() {
+  if (darkModeEnabled == false) {
+    console.log("Cambiando a modo nocturno");
+    ButtonDarkMode.innerHTML = `<a href="#">MODO DIURNO</a>`;
+    document.body.classList.add("darkMode");
+    darkModeEnabled = true;
+    logo.src = "assets/Logo-modo-noc.png";
+    localStorage.setItem("darkModeEnabled?", true)
+  } else {
+    console.log("Cambiando a modo diurno");
+    ButtonDarkMode.innerHTML = `<a href="#">MODO NOCTURNO</a>`;
+    document.body.classList.remove("darkMode");
+    darkModeEnabled = false;
+    logo.src = "assets/logo-desktop.png";
+    localStorage.setItem("darkModeEnabled?", false)
   }
+}
+//*RETRIEVE DARK MODE FROM LOCALSTORAGE
+function retrieveMode() {
+  if (localStorage.getItem("darkModeEnabled?") == true) {
+    darkModeEnabled = false;
+    enableDarkMode();
+    console.log("FARCHA")
+  }
+}
+
+
 //!-----------------------------------------
 //!GIFOS
 //!-----------------------------------------
@@ -169,8 +183,8 @@ function renderSearchedGifos(array) {
     SearchSection.appendChild(h3);
   }
   //IF NO RESULTS
-  
-  if(array.length == 0){
+
+  if (array.length == 0) {
     ouch = document.createElement("div");
     ouch.style = "display:flex; flex-flow: column;"
     ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`
@@ -198,10 +212,10 @@ function renderSearchedGifos(array) {
 
   //VIEW MORE
   if (Iterations < 3) {
-    if(array.length > 11){
+    if (array.length > 11) {
       createButton();
     }
-  } else if(array.length - (offsetS - 12) > 11){
+  } else if (array.length - (offsetS - 12) > 11) {
     createButton();
   }
 
@@ -210,7 +224,7 @@ function renderSearchedGifos(array) {
     let button = document.createElement("button");
     button.classList.add("verMAS");
     button.innerHTML = "VER MÁS";
-    
+
     //*ACTUAL ACTION
     button.addEventListener("click", () => {
       document.querySelector(".verMAS").remove();
@@ -219,5 +233,5 @@ function renderSearchedGifos(array) {
     });
     SearchSection.append(button);
   }
- 
+
 }
