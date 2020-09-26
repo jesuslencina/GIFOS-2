@@ -171,8 +171,6 @@ function renderSearchedGifos(array) {
   }
   Iterations++;
 
-  //////
-  console.log(array.length)
   //VIEW MORE
   if (Iterations < 3) {
     if(array.length > 11){
