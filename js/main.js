@@ -34,6 +34,10 @@ const SearchSection = document.querySelector(".search_results");
 const TrendingGifosContainer = document.querySelector(".trending_gifos_gifos_container");
 const TrendingRightArrow = document.getElementById("right_arrow");
 const TrendingLeftArrow = document.getElementById("left_arrow");
+//*FOOTER
+const FacebookIcon = document.querySelectorAll(".footer_share_buttons_item")[0];
+const TwitterIcon = document.querySelectorAll(".footer_share_buttons_item")[1];
+const InstagramIcon = document.querySelectorAll(".footer_share_buttons_item")[2];
 //!-----------------------------------------
 //!LISTENERS
 //!-----------------------------------------

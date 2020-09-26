@@ -8,14 +8,28 @@ function enableDarkMode() {
     ButtonDarkMode.innerHTML = `<a href="#">MODO DIURNO</a>`;
     document.body.classList.add("darkMode");
     darkModeEnabled = true;
+    //REPLACE SOURCES
     logo.src = "assets/Logo-modo-noc.png";
+    TrendingRightArrow.src="assets/button-slider-right-md-noct.svg";
+    TrendingLeftArrow.src = "assets/button-slider-left-md-noct.svg";
+    FacebookIcon.src = "assets/icon_facebook_noc.svg";
+    TwitterIcon.src = "assets/icon_twitter_noc.svg";
+    InstagramIcon.src = "assets/icon_instagram_noc.svg";
+    SearchPurple.src = "assets/icon-search-modo-noct.svg";
     localStorage.setItem("darkModeEnabled?", true)
   } else {
     console.log("Cambiando a modo diurno");
     ButtonDarkMode.innerHTML = `<a href="#">MODO NOCTURNO</a>`;
     document.body.classList.remove("darkMode");
     darkModeEnabled = false;
+    //REPLACE SOURCES
     logo.src = "assets/logo-desktop.png";
+    TrendingRightArrow.src="assets/Button-Slider-right.svg";
+    TrendingLeftArrow.src = "assets/button-slider-left.svg";
+    FacebookIcon.src = "assets/icon_facebook.svg";
+    TwitterIcon.src = "assets/icon-tw-normal.svg";
+    InstagramIcon.src = "assets/icon_instagram.svg";
+    SearchPurple.src = "assets/icon-search.svg";
     localStorage.setItem("darkModeEnabled?", false)
   }
 }
