@@ -99,12 +99,17 @@ function renderTrendingGifos(offset) {
 //!-----------------------------------------
 //*SEARCH FOCUS
 function searchActive() {
+  //HIDE TRENDING TAGS
+  document.querySelector(".hero_h3").classList.add("hidden");
+  document.querySelector(".hero_trending_tags").classList.add("hidden");
   SearchPurple.classList.add("hidden");
   SearchClose.classList.remove("hidden");
   SearchGray.classList.remove("hidden");
 }
 
 function searchDisable() {
+  document.querySelector(".hero_h3").classList.remove("hidden");
+  document.querySelector(".hero_trending_tags").classList.remove("hidden");
   SearchPurple.classList.remove("hidden");
   SearchClose.classList.add("hidden");
   SearchGray.classList.add("hidden");
@@ -118,9 +123,7 @@ function searchStart() {
     offsetS = 0;
     SearchSection.innerHTML = "";
     SearchedGIFOS = [];
-    //HIDE TRENDING TAGS
-    document.querySelector(".hero_h3").classList.add("hidden");
-    document.querySelector(".hero_trending_tags").classList.add("hidden");
+    searchDisable();
     //SHOW SEARCH SECTION
     SearchSection.classList.remove("hidden");
     //SUMMON API
