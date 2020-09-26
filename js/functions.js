@@ -51,16 +51,24 @@ function generateGifoListeners(selected) {
   //SHOW  & HIDE HOVER
   selected.addEventListener("mouseover", () => {
     selected.querySelector(".gifoHover").classList.remove("hidden");
-    genenerateGifoButtons(selected);
   });
   selected.addEventListener("mouseout", () => {
     selected.querySelector(".gifoHover").classList.add("hidden");
   });
+
+  //CLICK
+  //selected.addEventListener("click", () =>{maximizeGIFO(selected);})
 }
 //*GENERATE BUTTON LISTENERS
 function genenerateGifoButtons(selected) {
   //STORE BUTTON ELEMENTS
   let buttons = selected.querySelectorAll(".gifo_buttonbar img");
+
+  console.log(buttons)
+  //!CLICK LISTENERS
+  //maximize
+  buttons[2].addEventListener("click", () => {maximizeGIFO(selected);})
+  buttons[1].addEventListener("click", () =>{console.log(selected)})
   //HOVER LISTENERS
   //fav button
   buttons[0].addEventListener("mouseover", () => {
@@ -83,6 +91,11 @@ function genenerateGifoButtons(selected) {
   buttons[2].addEventListener("mouseout", () => {
     buttons[2].src = "assets/icon-max-normal.svg";
   });
+}
+
+//*MAXIMIZE GIFO
+function maximizeGIFO(selected) {
+  console.log("CALUT")
 }
 //!-----------------------------------------
 //!TRENDING
@@ -133,6 +146,7 @@ function renderTrendingGifos(offset) {
         </div>`;
     TrendingGifosContainer.appendChild(gifo);
     generateGifoListeners(gifo);
+    genenerateGifoButtons(gifo);
   }
 }
 //!-----------------------------------------
@@ -224,6 +238,7 @@ function renderSearchedGifos(array) {
         <p class="gifo_title">${array[i].title}</p>`;
     SearchSection.appendChild(div);
     generateGifoListeners(div);
+    genenerateGifoButtons(div);
   }
   Iterations++;
 
