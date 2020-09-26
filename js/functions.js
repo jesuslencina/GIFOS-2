@@ -10,13 +10,14 @@ function enableDarkMode() {
     darkModeEnabled = true;
     //REPLACE SOURCES
     logo.src = "assets/Logo-modo-noc.png";
-    TrendingRightArrow.src="assets/button-slider-right-md-noct.svg";
+    TrendingRightArrow.src = "assets/button-slider-right-md-noct.svg";
     TrendingLeftArrow.src = "assets/button-slider-left-md-noct.svg";
     FacebookIcon.src = "assets/icon_facebook_noc.svg";
     TwitterIcon.src = "assets/icon_twitter_noc.svg";
     InstagramIcon.src = "assets/icon_instagram_noc.svg";
     SearchPurple.src = "assets/icon-search-modo-noct.svg";
-    localStorage.setItem("darkModeEnabled?", true)
+    //LOCALSTORAGE
+    localStorage.setItem("COLORMODE", "dark");
   } else {
     console.log("Cambiando a modo diurno");
     ButtonDarkMode.innerHTML = `<a href="#">MODO NOCTURNO</a>`;
@@ -24,23 +25,30 @@ function enableDarkMode() {
     darkModeEnabled = false;
     //REPLACE SOURCES
     logo.src = "assets/logo-desktop.png";
-    TrendingRightArrow.src="assets/Button-Slider-right.svg";
+    TrendingRightArrow.src = "assets/Button-Slider-right.svg";
     TrendingLeftArrow.src = "assets/button-slider-left.svg";
     FacebookIcon.src = "assets/icon_facebook.svg";
     TwitterIcon.src = "assets/icon-tw-normal.svg";
     InstagramIcon.src = "assets/icon_instagram.svg";
     SearchPurple.src = "assets/icon-search.svg";
-    localStorage.setItem("darkModeEnabled?", false)
+    //LOCALSSTORAGE
+    localStorage.setItem("COLORMODE", "light");
   }
 }
 //*RETRIEVE DARK MODE FROM LOCALSTORAGE
 function retrieveMode() {
-  if (localStorage.getItem("darkModeEnabled?") == true) {
+  if (localStorage.getItem("COLORMODE")) {
+    if (localStorage.getItem("COLORMODE") == "light") {
+      darkModeEnabled = true;
+    } else{
+      darkModeEnabled = false;
+    }
+  } else{
     darkModeEnabled = false;
-    enableDarkMode();
-    console.log("FARCHA")
   }
+  enableDarkMode();
 }
+retrieveMode();
 
 
 //!-----------------------------------------
@@ -57,9 +65,10 @@ function generateGifoListeners(selected) {
   });
   //MEDIA QUERY (IF ON MOBILE, THE CLICK WILL MAXIMIZE GIFO)
   if (window.matchMedia("(max-width: 800px)").matches) {
-    selected.addEventListener("click", () =>{maximizeGIFO(selected);})
+    selected.addEventListener("click", () => {
+      maximizeGIFO(selected);
+    });
   }
-  
 }
 //*GENERATE BUTTON LISTENERS
 function genenerateGifoButtons(selected) {
@@ -68,8 +77,12 @@ function genenerateGifoButtons(selected) {
 
   //!CLICK LISTENERS
   //maximize
-  buttons[2].addEventListener("click", () => {maximizeGIFO(selected);})
-  buttons[1].addEventListener("click", () =>{console.log(selected)})
+  buttons[2].addEventListener("click", () => {
+    maximizeGIFO(selected);
+  });
+  buttons[1].addEventListener("click", () => {
+    console.log(selected);
+  });
   //HOVER LISTENERS
   //fav button
   buttons[0].addEventListener("mouseover", () => {
@@ -100,7 +113,6 @@ function maximizeGIFO(selected) {
   let title = selected.querySelector(".gifo_title").innerHTML;
   let url = selected.querySelector("img").src;
   console.log("Maximizando GIFO: " + title);
-
 }
 //!-----------------------------------------
 //!TRENDING
@@ -174,14 +186,12 @@ function searchDisable() {
   SearchClose.classList.add("hidden");
   SearchGray.classList.add("hidden");
   SearchSection.classList.add("hidden");
-  
-
 }
 
 //*CALL API
 function searchStart() {
   if (SearchBar.value != "") {
-    //CLEAN 
+    //CLEAN
     Iterations = 0;
     offsetS = 0;
     SearchSection.innerHTML = "";
@@ -197,7 +207,12 @@ function searchStart() {
 //*GENERATE SEARCHED GIFOS
 function fillSearchedGifos(array) {
   for (let i = 0; i < array.length; i++) {
-    let newgifo = new GIFO(i + offsetS, array[i].username, array[i].title, array[i].images.original.url);
+    let newgifo = new GIFO(
+      i + offsetS,
+      array[i].username,
+      array[i].title,
+      array[i].images.original.url
+    );
     SearchedGIFOS.push(newgifo);
   }
   renderSearchedGifos(SearchedGIFOS);
@@ -207,7 +222,7 @@ function fillSearchedGifos(array) {
 function renderSearchedGifos(array) {
   //ONLY IF IT'S THE 1ST TIME
   if (offsetS == 0) {
-    //CLEAN 
+    //CLEAN
     SearchSection.innerHTML = " ";
     SearchedGIFOS = [];
     //LINE
@@ -222,13 +237,12 @@ function renderSearchedGifos(array) {
 
   if (array.length == 0) {
     ouch = document.createElement("div");
-    ouch.style = "display:flex; flex-flow: column;"
-    ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`
+    ouch.style = "display:flex; flex-flow: column;";
+    ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`;
     SearchSection.appendChild(ouch);
   }
   //RENDER
   for (let i = 0; i < array.length; i++) {
-
     div = document.createElement("div");
     div.classList.add("gifo");
     div.innerHTML = `<img src="${array[i].url}" alt="GIFO" class="GIFO TrendingGifo">
@@ -270,5 +284,4 @@ function renderSearchedGifos(array) {
     });
     SearchSection.append(button);
   }
-
 }

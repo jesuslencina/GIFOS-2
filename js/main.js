@@ -1,7 +1,7 @@
 //!-----------------------------------------
 //!VARIABLES
 //!-----------------------------------------
-var darkModeEnabled = false;
+var darkModeEnabled;
 var burgerOpen = false;
 var sliderOffset = 0;
 var offsetS = 0;
