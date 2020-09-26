@@ -16,12 +16,11 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 
 - View as many as you want: Want more? Click the "VER MÁS" button to display twelve more GIFOS! You can do this as many times as you want, until there are no more GIFOS for your search.
 
-- Night-Friendly browsing: Too much light for the moment? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime.
+- Night-Friendly browsing: Too much light for the moment? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime. The site will remember your choice!
 
 ## TODO:
 
 - Save GIFOS feature
-- Save display mode preference on localstorage (Light/Dark mode)
 - Download GIFOS feature
 - Maximize GIFOS feature
 - Search bar on navigation bar when scrolling down

@@ -275,7 +275,7 @@ function renderSearchedGifos(array) {
     let button = document.createElement("button");
     button.classList.add("verMAS");
     button.innerHTML = "VER MÁS";
-
+    
     //*ACTUAL ACTION
     button.addEventListener("click", () => {
       document.querySelector(".verMAS").remove();
