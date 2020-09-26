@@ -265,6 +265,7 @@ body.darkMode .nav {
 .nav_logo {
   margin-left: 9.75rem;
   padding-top: 1em;
+  width: 4rem;
 }
 
 .nav_container {

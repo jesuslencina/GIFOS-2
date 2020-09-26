@@ -16,6 +16,9 @@ var Iterations = 0;
 const NavBurger = document.querySelector(".nav_container_burger");
 //UL
 const NavUL = document.querySelector(".nav_container_items");
+const NavULitems = document.querySelectorAll(".nav_container_items li");
+//DARKMODE
+const ButtonDarkMode = document.getElementById("BtnDarkMode");
 //*HERO
 const TrendingTags = document.querySelector(".hero_trending_tags");
 //*SEARCHBAR
@@ -32,6 +35,11 @@ const TrendingLeftArrow = document.getElementById("left_arrow");
 //!-----------------------------------------
 //!LISTENERS
 //!-----------------------------------------
+//*CREATE BURGER'S HRs
+hr1 = document.createElement("hr");
+hr2 = document.createElement("hr");
+NavUL.insertBefore(hr1, NavULitems[1])
+NavUL.insertBefore(hr2, NavULitems[2])
 //*BURGER MENU
 NavBurger.addEventListener("click", () => {
   //CHECK IF CLOSED
@@ -63,40 +71,40 @@ function generateTagListeners() {
   for (let i = 0; i < 5; i++) {
     TrendingTags.querySelectorAll(".trending_tag")[i].addEventListener("click", () => {
       SearchBar.value = TrendingTags.querySelectorAll(".trending_tag")[i].innerHTML;
-    })  
+    })
   }
 }
 //SEARCH ACTION
-SearchPurple.addEventListener("click", () => {searchStart()});
+SearchPurple.addEventListener("click", () => { searchStart() });
 SearchBar.addEventListener("keypress", (input) => {
   if (input.charCode === 13) {
     searchStart()
   }
 });
-SearchBar.addEventListener("focus", () => {searchActive()});
-SearchGray.addEventListener("click", () => {searchStart()});
-SearchClose.addEventListener("click", () => {searchDisable()});
+SearchBar.addEventListener("focus", () => { searchActive() });
+SearchGray.addEventListener("click", () => { searchStart() });
+SearchClose.addEventListener("click", () => { searchDisable() });
 
 
 //*TRENDING ARROWS
 TrendingRightArrow.addEventListener("click", () => {
   if (sliderOffset < 6) {
     sliderOffset = sliderOffset + 3;
-  }else{
+  } else {
     sliderOffset = 0;
   }
   renderTrendingGifos(sliderOffset)
 });
 
 TrendingLeftArrow.addEventListener("click", () => {
-    if (sliderOffset > 0) {
-        sliderOffset = sliderOffset - 3;
-      }else{
-        sliderOffset = 6;
-      }
-      renderTrendingGifos(sliderOffset)
-  });
-  
+  if (sliderOffset > 0) {
+    sliderOffset = sliderOffset - 3;
+  } else {
+    sliderOffset = 6;
+  }
+  renderTrendingGifos(sliderOffset)
+});
+
 //!-----------------------------------------
 //!GIFO OBJECTS
 //!-----------------------------------------
