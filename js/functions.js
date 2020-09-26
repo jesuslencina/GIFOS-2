@@ -55,16 +55,17 @@ function generateGifoListeners(selected) {
   selected.addEventListener("mouseout", () => {
     selected.querySelector(".gifoHover").classList.add("hidden");
   });
-
-  //CLICK
-  //selected.addEventListener("click", () =>{maximizeGIFO(selected);})
+  //MEDIA QUERY (IF ON MOBILE, THE CLICK WILL MAXIMIZE GIFO)
+  if (window.matchMedia("(max-width: 800px)").matches) {
+    selected.addEventListener("click", () =>{maximizeGIFO(selected);})
+  }
+  
 }
 //*GENERATE BUTTON LISTENERS
 function genenerateGifoButtons(selected) {
   //STORE BUTTON ELEMENTS
   let buttons = selected.querySelectorAll(".gifo_buttonbar img");
 
-  console.log(buttons)
   //!CLICK LISTENERS
   //maximize
   buttons[2].addEventListener("click", () => {maximizeGIFO(selected);})
@@ -95,7 +96,12 @@ function genenerateGifoButtons(selected) {
 
 //*MAXIMIZE GIFO
 function maximizeGIFO(selected) {
-  console.log("CALUT")
+  sessionStorage.setItem("author", selected.querySelector(".gifo_user").innerHTML);
+  sessionStorage.setItem("title", selected.querySelector(".gifo_title").innerHTML);
+  sessionStorage.setItem("url", selected.querySelector("img").src);
+  console.log("Maximizando GIFO: " + selected.querySelector("img").alt);
+  window.location.href = "maximized.html";
+
 }
 //!-----------------------------------------
 //!TRENDING
