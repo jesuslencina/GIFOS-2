@@ -130,7 +130,7 @@ function searchStart() {
 //*GENERATE SEARCHED GIFOS
 function fillSearchedGifos(array) {
   for (let i = 0; i < array.length; i++) {
-    let newgifo = new GIFO(i, array[i].username, array[i].title, array[i].images.original.url);
+    let newgifo = new GIFO(i + offsetS, array[i].username, array[i].title, array[i].images.original.url);
     SearchedGIFOS.push(newgifo);
   }
   renderSearchedGifos(SearchedGIFOS);
