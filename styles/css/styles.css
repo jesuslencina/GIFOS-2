@@ -127,6 +127,11 @@ body h1, body h2, body h3, body h4, body h5, body h6, body p, body span, body a 
   padding-left: 3.38rem;
 }
 
+body.darkMode .search_container .searchbar {
+  border-color: #9CAFC3;
+  background-color: #37383C;
+}
+
 .search_container .searchbar:focus {
   color: 900;
   outline: none;
@@ -392,6 +397,10 @@ body.darkMode .nav_container_items_item a {
     background-color: #572EE5;
     opacity: 90%;
   }
+  body.darkMode .nav_container_items {
+    background-color: black;
+    opacity: 100%;
+  }
   .nav_container_items li {
     margin-top: 1.38rem;
     margin-bottom: 1.38rem;
@@ -429,10 +438,6 @@ body.darkMode .nav_container_items_item a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-body.darkMode .hero {
-  background-color: #37383C;
 }
 
 .hero_h1 {
@@ -516,6 +521,9 @@ body.darkMode .hero_trending_tags span:hover {
         -ms-grid-row-align: center;
         align-self: center;
   }
+  .hero_trending_tags {
+    font-size: 15px;
+  }
   .hero_img {
     width: 75%;
     -ms-flex-item-align: center;
@@ -558,6 +566,10 @@ body.darkMode .hero_trending_tags span:hover {
   text-transform: capitalize;
 }
 
+body.darkMode .search_results h3 {
+  color: white;
+}
+
 .search_results .noresult {
   font-weight: 700;
   color: #5ED7C6;
@@ -595,6 +607,18 @@ body.darkMode .hero_trending_tags span:hover {
 .verMAS:hover {
   color: white;
   background-color: #572EE5;
+  cursor: pointer;
+}
+
+body.darkMode .verMAS {
+  border-color: #9CAFC3;
+  background-color: #37383C;
+  color: white;
+}
+
+body.darkMode .verMAS:hover {
+  color: rgba(255, 255, 255, 0.568);
+  background-color: gray;
   cursor: pointer;
 }
 

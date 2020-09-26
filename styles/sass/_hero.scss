@@ -4,10 +4,7 @@
   flex-direction: column;
   margin-top: 9rem;
   align-items: center;
-  //!DARK MODE
-  body.darkMode & {
-    background-color: $Gray;
-  }
+  
   &_h1 {
     font-family: $Montserrat;
     font-size: 35px;
@@ -81,7 +78,9 @@
       width: 75%;
       align-self: center;
     }
-
+    &_trending_tags{
+      font-size: 15px;
+    }
     &_img {
       width: 75%;
       align-self: center;

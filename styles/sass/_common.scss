@@ -1,6 +1,6 @@
 //!HIDDEN CLASS
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
 
 //!ANIMATIONS
@@ -40,57 +40,62 @@
 
 //!SEARCHBAR
 .search_container {
-    align-self: center;
-    position: relative;
-    width: 34rem;
-    display: flex;
-  
-    .searchbar {
-      width: 100%;
-      //FONT
-      font-family: $Roboto;
-      font-size: 16px;
-      color: $SemiLightGray;
-      //BORDER
-      border: 1pt solid $Purple;
-      border-radius: 27px;
-      padding: 0.75rem;
-      padding-left: 3.38rem;
-  
-      //FOCUS
-      &:focus {
-        color: $Black;
-        outline: none;
-      }
+  align-self: center;
+  position: relative;
+  width: 34rem;
+  display: flex;
+
+  .searchbar {
+    width: 100%;
+    //FONT
+    font-family: $Roboto;
+    font-size: 16px;
+    color: $SemiLightGray;
+    //BORDER
+    border: 1pt solid $Purple;
+    border-radius: 27px;
+    padding: 0.75rem;
+    padding-left: 3.38rem;
+
+    body.darkMode & {
+      border-color: $SemiLightGray;
+      background-color: $Gray;
     }
-    //MAGNIFIER ICONS
-    .searchIconPurple {
-      position: absolute;
-      right: 5%;
-      top: 25%;
-      width: 1.2em;
-      &:hover{
-        cursor: pointer;
-      }
-    }
-    .searchIconGray{
-      position: absolute;
-      left: 5%;
-      top: 25%;
-      filter: brightness(4);
-      filter: grayscale(1);
-      z-index: 8;
-      &:hover{
-        cursor: pointer;
-      }
-    }
-  
-    .searchClose{
-      position: absolute;
-      right: 5.25%;
-      top: 35%;
+
+    //FOCUS
+    &:focus {
+      color: $Black;
+      outline: none;
     }
   }
+  //MAGNIFIER ICONS
+  .searchIconPurple {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    width: 1.2em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .searchIconGray {
+    position: absolute;
+    left: 5%;
+    top: 25%;
+    filter: brightness(4);
+    filter: grayscale(1);
+    z-index: 8;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .searchClose {
+    position: absolute;
+    right: 5.25%;
+    top: 35%;
+  }
+}
 
 //!GIFO & HOVER
 .gifo {
@@ -99,24 +104,24 @@
     width: 22rem;
     height: 17rem;
   }
-  
+
   //HOVER
   .gifoHover {
     width: 22rem;
     height: 17rem;
     position: absolute;
     top: 0;
-    
+
     z-index: 8;
     background-color: $PurpleDimmed;
     cursor: pointer;
     //BOTH AUTHOR AND TITLE
-    p{
+    p {
       position: absolute;
       left: 1rem;
     }
-    //GIFO's AUTHOR 
-    .gifo_user{
+    //GIFO's AUTHOR
+    .gifo_user {
       font-family: $Roboto;
       font-weight: $Regular;
       font-size: 15px;
@@ -124,7 +129,7 @@
       bottom: 4rem;
     }
     //GIFO's TITLE
-    .gifo_title{
+    .gifo_title {
       font-family: $Roboto;
       font-weight: $Bold;
       font-size: 16px;
@@ -156,19 +161,18 @@
   }
 }
 
+@media screen and (max-width: $Query) {
+  .search_container {
+    width: 90%;
+  }
 
-@media screen and (max-width: $Query){
-    .search_container{
-        width: 90%;
+  .gifo {
+    img {
+      width: 15rem;
+      height: 11rem;
     }
-
-    .gifo {
-      img {
-        width: 15rem;
-        height: 11rem;
-      }
-      .gifoHover {
-        display: none;
-      }
+    .gifoHover {
+      display: none;
     }
+  }
 }
