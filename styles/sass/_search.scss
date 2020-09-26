@@ -37,12 +37,18 @@
   font-weight: $Bold;
   font-size: 13px;
   color: $Purple;
-  background-color: white;
+  background-color: $White;
   border: 1pt solid $Purple;
   border-radius: 27px;
   padding: 0.75rem;
   position: absolute;
   bottom: -4rem;
+  transition: none;
+  &:hover{
+    color: $White;
+    background-color: $Purple;
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: $Query) {

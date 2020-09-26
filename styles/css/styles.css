@@ -556,6 +556,14 @@ body.darkMode .hero_h1 {
   padding: 0.75rem;
   position: absolute;
   bottom: -4rem;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.verMAS:hover {
+  color: white;
+  background-color: #572EE5;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
