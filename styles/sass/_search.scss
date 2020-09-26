@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  position: relative;
   hr {
     color: $Gray;
     width: 12rem;
@@ -29,6 +30,19 @@
       left: 0.75em;
     }
   }
+}
+
+.verMAS{
+  font-family: $Montserrat;
+  font-weight: $Bold;
+  font-size: 13px;
+  color: $Purple;
+  background-color: white;
+  border: 1pt solid $Purple;
+  border-radius: 27px;
+  padding: 0.75rem;
+  position: absolute;
+  bottom: -4rem;
 }
 
 @media screen and (max-width: $Query) {

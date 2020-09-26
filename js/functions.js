@@ -177,6 +177,7 @@ function renderSearchedGifos(array) {
     
     //*ACTUAL ACTION
     button.addEventListener("click", () => {
+      document.querySelector(".verMAS").remove();
       offsetS = offsetS + 12;
       search(SearchBar.value);
     });
