@@ -9,7 +9,7 @@ function enableDarkMode() {
     document.body.classList.add("darkMode");
     darkModeEnabled = true;
     //REPLACE SOURCES
-    logo.src = "assets/Logo-modo-noc.png";
+    logo.src = "assets/Logo-modo-noc.svg";
     TrendingRightArrow.src = "assets/button-slider-right-md-noct.svg";
     TrendingLeftArrow.src = "assets/button-slider-left-md-noct.svg";
     FacebookIcon.src = "assets/icon_facebook_noc.svg";
@@ -24,7 +24,7 @@ function enableDarkMode() {
     document.body.classList.remove("darkMode");
     darkModeEnabled = false;
     //REPLACE SOURCES
-    logo.src = "assets/logo-desktop.png";
+    logo.src = "assets/logo-desktop.svg";
     TrendingRightArrow.src = "assets/Button-Slider-right.svg";
     TrendingLeftArrow.src = "assets/button-slider-left.svg";
     FacebookIcon.src = "assets/icon_facebook.svg";
@@ -275,7 +275,7 @@ function renderSearchedGifos(array) {
     let button = document.createElement("button");
     button.classList.add("verMAS");
     button.innerHTML = "VER MÁS";
-    
+
     //*ACTUAL ACTION
     button.addEventListener("click", () => {
       document.querySelector(".verMAS").remove();
