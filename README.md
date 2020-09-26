@@ -2,7 +2,7 @@
 
 A Front-End project from Acámica's course. Built using [Giphy's API.](https://developers.giphy.com/docs/api#quick-start-guide)
 
-Developed by me. Special thanks to my mentor, @ivanenoriega and my classmates, @damiloyola , @AgostinaArevaloJaube and @wafer-bot .
+Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com/ivanenoriega) and my classmates, [@damiloyola](https://github.com/damiloyola) , [@AgostinaArevaloJaube](https://github.com/AgostinaArevaloJaube) and [@wafer-bot](https://github.com/wafer-bot).
 
 [Click here to view the live version.](https://gifos-jesus.netlify.app/)
 
