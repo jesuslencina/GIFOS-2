@@ -9,9 +9,13 @@ Developed by me. Special thanks to my mentor, @ivanenoriega and my classmates, @
 ## Features:
 
 - Choose which device to browse on: Computer, Laptop, Phone... The site will adapt itself to it 
+
 - See what's trending now: The top 9 GIFOS of the moment are displayed in the Trending GIFOS section. You can also see and search the most popular tags in the Trending Tags section, below the Search Bar
+
 - Search:  Use the Search Bar to look up for GIFOS using any word or phrase. After pressing ENTER or clicking on the search button, the first twelve results of your search will be displayed below. 
+
 - View as many as you want: Want more? Click the "VER MÁS" button to display twelve more GIFOS! You can do this as many times as you want, until there are no more GIFOS for your search.
+
 - Night-Friendly browsing: Too much light for the moment? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime.
 
 ## TODO:
