@@ -114,6 +114,7 @@ function searchDisable() {
 function searchStart() {
   if (SearchBar.value != "") {
     //CLEAN 
+    Iterations = 0;
     offsetS = 0;
     SearchSection.innerHTML = "";
     SearchedGIFOS = [];
@@ -168,9 +169,21 @@ function renderSearchedGifos(array) {
     SearchSection.appendChild(div);
     generateGifoListeners(div);
   }
+  Iterations++;
+
+  //////
+  console.log(array.length)
   //VIEW MORE
-  if (array.length > 11) {
-    //CREATE ELEMENT
+  if (Iterations < 3) {
+    if(array.length > 11){
+      createButton();
+    }
+  } else if(array.length - (offsetS - 12) > 11){
+    createButton();
+  }
+
+  //CREATE ELEMENT
+  function createButton() {
     let button = document.createElement("button");
     button.classList.add("verMAS");
     button.innerHTML = "VER MÁS";
@@ -183,4 +196,5 @@ function renderSearchedGifos(array) {
     });
     SearchSection.append(button);
   }
+ 
 }

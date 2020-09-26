@@ -7,6 +7,7 @@ var sliderOffset = 0;
 var offsetS = 0;
 var TrendingGIFOS = [];
 var SearchedGIFOS = [];
+var Iterations = 0;
 //!-----------------------------------------
 //!SELECTORS
 //!-----------------------------------------
