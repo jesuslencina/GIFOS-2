@@ -14,14 +14,14 @@
 
   //!DARKMODE
   body.darkMode & {
-    border-top-color: $Black;
+    border-top-color: black;
     background-color: $Gray;
   }
 
   //*LOGO
   &_logo {
     margin-left: $MarginGeneral;
-    padding-top: 1em;
+    padding-top: 0.25em;
     width: 4rem;
   }
 

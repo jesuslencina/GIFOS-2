@@ -4,6 +4,10 @@
   flex-direction: column;
   margin-top: 9rem;
   align-items: center;
+  //!DARK MODE
+  body.darkMode & {
+    background-color: $Gray;
+  }
   &_h1 {
     font-family: $Montserrat;
     font-size: 35px;
@@ -29,6 +33,10 @@
     color: $Purple;
     text-align: center;
     margin-top: 6rem;
+    //!DARK MODE
+    body.darkMode & {
+      color: white;
+    }
   }
 
   &_trending_tags {
@@ -38,10 +46,14 @@
     color: $Purple;
     text-align: center;
     margin-top: 0.5rem;
+    //!DARK MODE
+    body.darkMode & {
+      color: white;
+    }
     span {
       text-transform: capitalize;
       line-height: 2em;
-      &::after{
+      &::after {
         content: ",  ";
         white-space: pre;
       }
@@ -49,6 +61,10 @@
         cursor: pointer;
         filter: brightness(2);
         border-bottom: 1pt solid $Purple;
+        //!DARK MODE
+        body.darkMode & {
+          border-bottom-color: white;
+        }
       }
     }
   }

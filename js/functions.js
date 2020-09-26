@@ -1,7 +1,20 @@
 //!-----------------------------------------
 //!MISC
 //!-----------------------------------------
-
+//*ACTIVATE DARK MODE
+function enableDarkMode(){
+    if (darkModeEnabled == false){
+      ButtonDarkMode.innerHTML = `<a href="#">MODO DIURNO</a>`
+      document.body.classList.add("darkMode");
+      darkModeEnabled = true;
+      logo.src = "assets/Logo-modo-noc.png";
+    }else{
+      ButtonDarkMode.innerHTML = `<a href="#">MODO NOCTURNO</a>`
+      document.body.classList.remove("darkMode");
+      darkModeEnabled = false;
+      logo.src = "assets/logo-desktop.png";
+    }
+  }
 //!-----------------------------------------
 //!GIFOS
 //!-----------------------------------------

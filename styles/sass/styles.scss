@@ -1,32 +1,39 @@
 //!NORMALIZE
-*{
-    margin: 0;
-    padding: 0;
-    transition: background-color 1s ease-in-out;   
-   
+* {
+  margin: 0;
+  padding: 0;
+  transition: background-color 1s ease-in-out;
 }
 
-h1, h2, h3, h4, h5, h6, p, span, a{
+//!DARK MODE
+body {
+  background-color: white;
+  &.darkMode {
+    background-color:#37383C;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a {
     transition: color 1s ease-in-out;
+  }
 }
 
 //!IMPORT VARIABLES
-@import 'variables';
+@import "variables";
 
 //!IMPORT COMMON ELEMENTS
-@import 'common';
+@import "common";
 
 //!IMPORT NAVBAR
-@import 'navbar';
+@import "navbar";
 
 //!IMPORT HERO
-@import 'hero';
+@import "hero";
 
 //!IMPORT SEARCH SECTION
-@import 'search';
+@import "search";
 
 //!IMPORT TRENDING GIFOS SECTION
-@import 'trending';
+@import "trending";
 
 //!IMPORT FOOTER
-@import 'footer';
+@import "footer";

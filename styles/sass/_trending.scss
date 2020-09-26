@@ -7,12 +7,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  //!DARK MODE
+  body.darkMode & {
+    background-color:$DarkGray;
+  }
   //HEADER
   &_h2 {
     font-family: $Montserrat;
     font-weight: $Bold;
     font-size: 25px;
     color: $Purple;
+    //!DARK MODE
+    body.darkMode & {
+      color: white;
+    }
   }
 
   &_p {
@@ -20,6 +28,10 @@
     font-weight: $Regular;
     font-size: 18px;
     margin-top: 0.75rem;
+    //!DARK MODE
+    body.darkMode & {
+      color: white;
+    }
   }
 
   //GIFOS DISPLAY

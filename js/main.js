@@ -12,6 +12,8 @@ var Iterations = 0;
 //!SELECTORS
 //!-----------------------------------------
 //*NAVBAR
+//LOGO
+const logo = document.querySelector(".nav_logo");
 //BURGER
 const NavBurger = document.querySelector(".nav_container_burger");
 //UL
@@ -35,6 +37,8 @@ const TrendingLeftArrow = document.getElementById("left_arrow");
 //!-----------------------------------------
 //!LISTENERS
 //!-----------------------------------------
+//*DARK MODE
+ButtonDarkMode.addEventListener("click", () => {enableDarkMode();});
 //*CREATE BURGER'S HRs
 hr1 = document.createElement("hr");
 hr2 = document.createElement("hr");
