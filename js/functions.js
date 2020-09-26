@@ -152,8 +152,17 @@ function renderSearchedGifos(array) {
     h3.innerHTML = SearchBar.value;
     SearchSection.appendChild(h3);
   }
+  //IF NO RESULTS
+  
+  if(array.length == 0){
+    ouch = document.createElement("div");
+    ouch.style = "display:flex; flex-flow: column;"
+    ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`
+    SearchSection.appendChild(ouch);
+  }
   //RENDER
   for (let i = 0; i < array.length; i++) {
+
     div = document.createElement("div");
     div.classList.add("gifo");
     div.innerHTML = `<img src="${array[i].url}" alt="GIFO" class="GIFO TrendingGifo">

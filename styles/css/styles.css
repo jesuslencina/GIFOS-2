@@ -533,6 +533,13 @@ body.darkMode .hero_h1 {
   text-transform: capitalize;
 }
 
+.search_results .noresult {
+  font-weight: 700;
+  color: #5ED7C6;
+  font-size: 22px;
+  text-transform: none;
+}
+
 .search_results .gifo {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -572,6 +579,12 @@ body.darkMode .hero_h1 {
         -ms-flex-align: center;
             align-items: center;
     width: 100vw;
+  }
+  .search_results h3 {
+    font-size: 25px;
+  }
+  .search_results .noresult {
+    font-size: 18px;
   }
   .search_results .gifo img {
     width: 9rem;
