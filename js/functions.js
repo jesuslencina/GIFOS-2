@@ -96,11 +96,10 @@ function genenerateGifoButtons(selected) {
 
 //*MAXIMIZE GIFO
 function maximizeGIFO(selected) {
-  sessionStorage.setItem("author", selected.querySelector(".gifo_user").innerHTML);
-  sessionStorage.setItem("title", selected.querySelector(".gifo_title").innerHTML);
-  sessionStorage.setItem("url", selected.querySelector("img").src);
-  console.log("Maximizando GIFO: " + selected.querySelector("img").alt);
-  window.location.href = "maximized.html";
+  let username = selected.querySelector(".gifo_user").innerHTML;
+  let title = selected.querySelector(".gifo_title").innerHTML;
+  let url = selected.querySelector("img").src;
+  console.log("Maximizando GIFO: " + title);
 
 }
 //!-----------------------------------------
