@@ -154,6 +154,9 @@ function searchDisable() {
   SearchPurple.classList.remove("hidden");
   SearchClose.classList.add("hidden");
   SearchGray.classList.add("hidden");
+  SearchSection.classList.add("hidden");
+  
+
 }
 
 //*CALL API

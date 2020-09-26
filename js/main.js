@@ -79,6 +79,7 @@ function generateTagListeners() {
   for (let i = 0; i < 5; i++) {
     TrendingTags.querySelectorAll(".trending_tag")[i].addEventListener("click", () => {
       SearchBar.value = TrendingTags.querySelectorAll(".trending_tag")[i].innerHTML;
+      searchStart();
     })
   }
 }
@@ -91,7 +92,7 @@ SearchBar.addEventListener("keypress", (input) => {
 });
 SearchBar.addEventListener("focus", () => { searchActive() });
 SearchGray.addEventListener("click", () => { searchStart() });
-SearchClose.addEventListener("click", () => { searchDisable() });
+SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; SearchSection.innerHTML = "";});
 
 
 //*TRENDING ARROWS
