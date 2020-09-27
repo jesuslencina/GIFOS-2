@@ -95,9 +95,9 @@
 .nav_search_container {
   align-self: center;
   position: relative;
-  width: 20rem;
+  width: 25vw;
   display: flex;
-
+  
   .NAVsearchbar {
     width: 100%;
     //FONT
@@ -109,7 +109,6 @@
     border-radius: 27px;
     padding: 0.75rem;
     padding-left: 3.38rem;
-
     body.darkMode & {
       border-color: $SemiLightGray;
       background-color: $Gray;

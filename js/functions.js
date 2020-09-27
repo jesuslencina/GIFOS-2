@@ -179,6 +179,7 @@ function navSearch() {
       console.log("Mobile user. The searchbar won't show in the Navbar");
       }else{
        NavSearch.classList.remove("hidden");
+       NavSearchBar.value = SearchBar.value; ///?
        Nav.style.borderBottom = "1pt solid black";
       }
   } else{
@@ -194,6 +195,7 @@ function searchActive() {
   //HIDE TRENDING TAGS
   document.querySelector(".hero_h3").classList.add("hidden");
   document.querySelector(".hero_trending_tags").classList.add("hidden");
+  //HIDE & SHOW OTHER STUFF
   SearchPurple.classList.add("hidden");
   SearchClose.classList.remove("hidden");
   SearchGray.classList.remove("hidden");
