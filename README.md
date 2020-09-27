@@ -23,7 +23,7 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 - Save GIFOS feature
 - Download GIFOS feature
 - Maximize GIFOS feature
-- Search bar on navigation bar when scrolling down
+- FIX Search bar on navigation bar when scrolling down (extremely buggy right now)
 - Create GIFOS feature
 - Hover implementations
 

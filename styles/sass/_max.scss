@@ -3,7 +3,14 @@
     height: 100vh;
     z-index: 12;
     background-color: $White;
-    position: fixed;
+
+    position: absolute;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
+    img{
+        width: 44rem;
+        height: 28rem;
+    }
 }

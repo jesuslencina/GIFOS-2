@@ -947,7 +947,7 @@ body.darkMode .footer_copyright {
   height: 100vh;
   z-index: 12;
   background-color: white;
-  position: fixed;
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -955,4 +955,12 @@ body.darkMode .footer_copyright {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.max img {
+  width: 44rem;
+  height: 28rem;
 }

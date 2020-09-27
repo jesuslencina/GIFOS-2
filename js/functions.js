@@ -40,12 +40,12 @@ function retrieveMode() {
   if (localStorage.getItem("COLORMODE")) {
     if (localStorage.getItem("COLORMODE") == "light") {
       darkModeEnabled = true;
-    } else{
+    } else {
       darkModeEnabled = false;
     }
-  } else{
+  } else {
     darkModeEnabled = true;
-    
+
   }
   enableDarkMode();
 }
@@ -115,7 +115,10 @@ function maximizeGIFO(selected) {
   let url = selected.querySelector("img").src;
   console.log("Maximizando GIFO: " + title);
   //CREATE ELEMENT
-
+  div = document.createElement("div");
+  div.classList.add("max");
+  div.innerHTML = `<img src="${url}" alt="${title}">`
+  document.body.insertBefore(div, document.querySelector(".hero"));
 }
 //!-----------------------------------------
 //!TRENDING
@@ -174,142 +177,147 @@ function renderTrendingGifos(offset) {
 //!-----------------------------------------
 //*NAVBAR'S SEARCH INPUT
 function navSearch() {
-  if (document.documentElement.scrollTop > 500) {
-    if (window.matchMedia("(max-width: 800px)").matches) {
-      console.log("Mobile user. The searchbar won't show in the Navbar");
-      }else{
-       NavSearch.classList.remove("hidden");
-       NavSearchBar.value = SearchBar.value; ///?
-       Nav.style.borderBottom = "1pt solid black";
-      }
-  } else{
-    NavSearch.classList.add("hidden");
-    Nav.style.borderBottom = "none";
-  }
-}
-//NAVBAR'S SEARCHBAR
-window.addEventListener('scroll', navSearch);
-
-//*SEARCH FOCUS
-function searchActive() {
-  //HIDE TRENDING TAGS
-  document.querySelector(".hero_h3").classList.add("hidden");
-  document.querySelector(".hero_trending_tags").classList.add("hidden");
-  //HIDE & SHOW OTHER STUFF
-  SearchPurple.classList.add("hidden");
-  SearchClose.classList.remove("hidden");
-  SearchGray.classList.remove("hidden");
-  NavSearchPurple.classList.add("hidden");
-  NavSearchClose.classList.remove("hidden");
-  NavSearchGray.classList.remove("hidden");
-}
-
-function searchDisable() {
-  document.querySelector(".hero_h3").classList.remove("hidden");
-  document.querySelector(".hero_trending_tags").classList.remove("hidden");
-  SearchPurple.classList.remove("hidden");
-  SearchClose.classList.add("hidden");
-  SearchGray.classList.add("hidden");
-  NavSearchPurple.classList.remove("hidden");
-  NavSearchClose.classList.add("hidden");
-  NavSearchGray.classList.add("hidden");
-  SearchSection.classList.add("hidden");
-}
-
-//*CALL API
-function searchStart() {
-  if (SearchBar.value != "") {
-    //CLEAN
-    Iterations = 0;
-    offsetS = 0;
-    SearchSection.innerHTML = "";
-    SearchedGIFOS = [];
-    searchDisable();
-    //SHOW SEARCH SECTION
-    SearchSection.classList.remove("hidden");
-    //SUMMON API
-    search(SearchBar.value);
+  if (window.matchMedia("(max-width: 800px)").matches) {
+    console.log("Mobile user. The searchbar won't show in the Navbar");
+  } else if (window.matchMedia("(max-width: 1280px)")) {
+    if (document.documentElement.scrollTop > 500) {
+      navSearchShow()
+    } else {
+      NavSearch.classList.add("hidden");
+      Nav.style.borderBottom = "none";
+    }
   }
 }
 
-//*GENERATE SEARCHED GIFOS
-function fillSearchedGifos(array) {
-  for (let i = 0; i < array.length; i++) {
-    let newgifo = new GIFO(
-      i + offsetS,
-      array[i].username,
-      array[i].title,
-      array[i].images.original.url
-    );
-    SearchedGIFOS.push(newgifo);
+  function navSearchShow() {
+    NavSearch.classList.remove("hidden");
+    NavSearchBar.value = SearchBar.value; ///?
+    Nav.style.borderBottom = "1pt solid black";
   }
-  renderSearchedGifos(SearchedGIFOS);
-}
+  //NAVBAR'S SEARCHBAR
+  window.addEventListener('scroll', navSearch);
 
-//*RENDER SEARCHED GIFOS
-function renderSearchedGifos(array) {
-  //ONLY IF IT'S THE 1ST TIME
-  if (offsetS == 0) {
-    //CLEAN
-    SearchSection.innerHTML = " ";
-    SearchedGIFOS = [];
-    //LINE
-    hr = document.createElement("hr");
-    SearchSection.appendChild(hr);
-    //H3
-    h3 = document.createElement("h3");
-    h3.innerHTML = SearchBar.value;
-    SearchSection.appendChild(h3);
+  //*SEARCH FOCUS
+  function searchActive() {
+    //HIDE TRENDING TAGS
+    document.querySelector(".hero_h3").classList.add("hidden");
+    document.querySelector(".hero_trending_tags").classList.add("hidden");
+    //HIDE & SHOW OTHER STUFF
+    SearchPurple.classList.add("hidden");
+    SearchClose.classList.remove("hidden");
+    SearchGray.classList.remove("hidden");
+    NavSearchPurple.classList.add("hidden");
+    NavSearchClose.classList.remove("hidden");
+    NavSearchGray.classList.remove("hidden");
   }
-  //IF NO RESULTS
 
-  if (array.length == 0) {
-    ouch = document.createElement("div");
-    ouch.style = "display:flex; flex-flow: column;";
-    ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`;
-    SearchSection.appendChild(ouch);
+  function searchDisable() {
+    document.querySelector(".hero_h3").classList.remove("hidden");
+    document.querySelector(".hero_trending_tags").classList.remove("hidden");
+    SearchPurple.classList.remove("hidden");
+    SearchClose.classList.add("hidden");
+    SearchGray.classList.add("hidden");
+    NavSearchPurple.classList.remove("hidden");
+    NavSearchClose.classList.add("hidden");
+    NavSearchGray.classList.add("hidden");
+    SearchSection.classList.add("hidden");
   }
-  //RENDER
-  for (let i = 0; i < array.length; i++) {
-    div = document.createElement("div");
-    div.classList.add("gifo");
-    div.innerHTML = `<img src="${array[i].url}" alt="GIFO" class="GIFO TrendingGifo">
+
+  //*CALL API
+  function searchStart() {
+    if (SearchBar.value != "") {
+      //CLEAN
+      Iterations = 0;
+      offsetS = 0;
+      SearchSection.innerHTML = "";
+      SearchedGIFOS = [];
+      searchDisable();
+      //SHOW SEARCH SECTION
+      SearchSection.classList.remove("hidden");
+      //SUMMON API
+      search(SearchBar.value);
+    }
+  }
+
+  //*GENERATE SEARCHED GIFOS
+  function fillSearchedGifos(array) {
+    for (let i = 0; i < array.length; i++) {
+      let newgifo = new GIFO(
+        i + offsetS,
+        array[i].username,
+        array[i].title,
+        array[i].images.original.url
+      );
+      SearchedGIFOS.push(newgifo);
+    }
+    renderSearchedGifos(SearchedGIFOS);
+  }
+
+  //*RENDER SEARCHED GIFOS
+  function renderSearchedGifos(array) {
+    //ONLY IF IT'S THE 1ST TIME
+    if (offsetS == 0) {
+      //CLEAN
+      SearchSection.innerHTML = " ";
+      SearchedGIFOS = [];
+      //LINE
+      hr = document.createElement("hr");
+      SearchSection.appendChild(hr);
+      //H3
+      h3 = document.createElement("h3");
+      h3.innerHTML = SearchBar.value;
+      SearchSection.appendChild(h3);
+    }
+    //IF NO RESULTS
+
+    if (array.length == 0) {
+      ouch = document.createElement("div");
+      ouch.style = "display:flex; flex-flow: column;";
+      ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`;
+      SearchSection.appendChild(ouch);
+    }
+    //RENDER
+    for (let i = 0; i < array.length; i++) {
+      div = document.createElement("div");
+      div.classList.add("gifo");
+      div.innerHTML = `<img src="${array[i].url}" alt="GIFO" class="GIFO TrendingGifo">
     <!--OVERLAY-->
     <div class="gifoHover hidden">
         <div class="gifo_buttonbar">
             <img src="assets/icon-fav.svg" class="fav" alt="Botón favorito">
             <img src="assets/icon-download.svg" class="download" alt="Botón descargar">
-            <img src="assets/icon-max-normal.svg" class="max" alt="Botón maximizar">
+            <img src="assets/icon-max-normal.svg" class="maximize" alt="Botón maximizar">
         </div>
         <p class="gifo_user">${array[i].author}</p>
         <p class="gifo_title">${array[i].title}</p>`;
-    SearchSection.appendChild(div);
-    generateGifoListeners(div);
-    genenerateGifoButtons(div);
-  }
-  Iterations++;
+      SearchSection.appendChild(div);
+      generateGifoListeners(div);
+      genenerateGifoButtons(div);
+    }
+    Iterations++;
 
-  //VIEW MORE
-  if (Iterations < 3) {
-    if (array.length > 11) {
+    //VIEW MORE
+    if (Iterations < 3) {
+      if (array.length > 11) {
+        createButton();
+      }
+    } else if (array.length - (offsetS - 12) > 11) {
       createButton();
     }
-  } else if (array.length - (offsetS - 12) > 11) {
-    createButton();
+
+    //CREATE ELEMENT
+    function createButton() {
+      let button = document.createElement("button");
+      button.classList.add("verMAS");
+      button.innerHTML = "VER MÁS";
+
+      //*ACTUAL ACTION
+      button.addEventListener("click", () => {
+        document.querySelector(".verMAS").remove();
+        offsetS = offsetS + 12;
+        search(SearchBar.value);
+      });
+      SearchSection.append(button);
+    }
   }
 
-  //CREATE ELEMENT
-  function createButton() {
-    let button = document.createElement("button");
-    button.classList.add("verMAS");
-    button.innerHTML = "VER MÁS";
-
-    //*ACTUAL ACTION
-    button.addEventListener("click", () => {
-      document.querySelector(".verMAS").remove();
-      offsetS = offsetS + 12;
-      search(SearchBar.value);
-    });
-    SearchSection.append(button);
-  }
-}

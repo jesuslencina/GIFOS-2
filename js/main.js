@@ -94,15 +94,17 @@ function generateTagListeners() {
   }
 }
 //SEARCH ACTION
+//?HERO'S SEARCHBAR
 SearchPurple.addEventListener("click", () => { searchStart() });
-NavSearchPurple.addEventListener("click", () => {
-  SearchBar.value = NavSearchBar.value;
-  searchStart();
-});
 SearchBar.addEventListener("keypress", (input) => {
   if (input.charCode === 13) {
     searchStart()
   }
+});
+//?NAV'S SEARCHBAR
+NavSearchPurple.addEventListener("click", () => {
+  SearchBar.value = NavSearchBar.value;
+  searchStart();
 });
 NavSearchBar.addEventListener("keypress", (input) => {
   if (input.charCode === 13) {
@@ -110,14 +112,18 @@ NavSearchBar.addEventListener("keypress", (input) => {
     searchStart();
   }
 });
+//FOCUS & CLICK ACTION
+//?HERO'S SEARCHBAR
 SearchBar.addEventListener("focus", () => { searchActive() });
-NavSearchBar.addEventListener("focus", () => { searchActive() });
 SearchGray.addEventListener("click", () => { searchStart() });
+SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
+
+//?NAV'S SEARCHBAR
+NavSearchBar.addEventListener("focus", () => { searchActive() });
 NavSearchGray.addEventListener("click", () => {
   SearchBar.value = NavSearchBar.value;
   searchStart();
 });
-SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
 NavSearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
 
 //*TRENDING ARROWS
