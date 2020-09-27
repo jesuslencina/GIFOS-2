@@ -943,10 +943,15 @@ body.darkMode .footer_copyright {
 }
 
 .max {
-  width: 100vw;
-  height: 50vh;
+  margin: 0 auto;
+  background-color: red;
+  width: 50vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   z-index: 8;
   background-color: white;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -959,7 +964,48 @@ body.darkMode .footer_copyright {
           align-items: center;
 }
 
+.max .closez {
+  padding: 1em;
+}
+
 .max .gifo {
   width: 44rem;
   height: 28rem;
+}
+
+.max .bottomz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 44rem;
+  margin-top: 1em;
+}
+
+.max .bottomz .dataz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-self: left;
+}
+
+.max .bottomz .dataz .username {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+}
+
+.max .bottomz .dataz .title {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+.max .bottomz .buttonz {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-end;
 }
