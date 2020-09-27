@@ -44,7 +44,8 @@ function retrieveMode() {
       darkModeEnabled = false;
     }
   } else{
-    darkModeEnabled = false;
+    darkModeEnabled = true;
+    
   }
   enableDarkMode();
 }
@@ -113,6 +114,8 @@ function maximizeGIFO(selected) {
   let title = selected.querySelector(".gifo_title").innerHTML;
   let url = selected.querySelector("img").src;
   console.log("Maximizando GIFO: " + title);
+  //CREATE ELEMENT
+
 }
 //!-----------------------------------------
 //!TRENDING
@@ -156,7 +159,7 @@ function renderTrendingGifos(offset) {
             <div class="gifo_buttonbar">
                 <img src="assets/icon-fav.svg" class="fav" alt="Botón favorito">
                 <img src="assets/icon-download.svg" class="download" alt="Botón descargar">
-                <img src="assets/icon-max-normal.svg" class="max" alt="Botón maximizar">
+                <img src="assets/icon-max-normal.svg" class="maximize" alt="Botón maximizar">
             </div>
             <p class="gifo_user">${TrendingGIFOS[i].author}</p>
             <p class="gifo_title">${TrendingGIFOS[i].title}</p>
@@ -169,6 +172,23 @@ function renderTrendingGifos(offset) {
 //!-----------------------------------------
 //!SEARCH
 //!-----------------------------------------
+//*NAVBAR'S SEARCH INPUT
+function navSearch() {
+  if (document.documentElement.scrollTop > 500) {
+    if (window.matchMedia("(max-width: 800px)").matches) {
+      console.log("Mobile user. The searchbar won't show in the Navbar");
+      }else{
+       NavSearch.classList.remove("hidden");
+       Nav.style.borderBottom = "1pt solid black";
+      }
+  } else{
+    NavSearch.classList.add("hidden");
+    Nav.style.borderBottom = "none";
+  }
+}
+//NAVBAR'S SEARCHBAR
+window.addEventListener('scroll', navSearch);
+
 //*SEARCH FOCUS
 function searchActive() {
   //HIDE TRENDING TAGS
@@ -177,6 +197,9 @@ function searchActive() {
   SearchPurple.classList.add("hidden");
   SearchClose.classList.remove("hidden");
   SearchGray.classList.remove("hidden");
+  NavSearchPurple.classList.add("hidden");
+  NavSearchClose.classList.remove("hidden");
+  NavSearchGray.classList.remove("hidden");
 }
 
 function searchDisable() {
@@ -185,6 +208,9 @@ function searchDisable() {
   SearchPurple.classList.remove("hidden");
   SearchClose.classList.add("hidden");
   SearchGray.classList.add("hidden");
+  NavSearchPurple.classList.remove("hidden");
+  NavSearchClose.classList.add("hidden");
+  NavSearchGray.classList.add("hidden");
   SearchSection.classList.add("hidden");
 }
 

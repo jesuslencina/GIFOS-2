@@ -12,8 +12,16 @@ var Iterations = 0;
 //!SELECTORS
 //!-----------------------------------------
 //*NAVBAR
+//ENTIRE NAVBAR
+const Nav = document.querySelector(".nav");
 //LOGO
 const logo = document.querySelector(".nav_logo");
+//NAVSEARCH
+const NavSearch = document.querySelector(".nav_search_container");
+const NavSearchBar = document.querySelector(".NAVsearchbar");
+const NavSearchPurple = document.querySelector(".NAVsearchIconPurple");
+const NavSearchGray = document.querySelector(".NAVsearchIconGray");
+const NavSearchClose = document.querySelector(".NAVsearchClose");
 //BURGER
 const NavBurger = document.querySelector(".nav_container_burger");
 //UL
@@ -42,7 +50,7 @@ const InstagramIcon = document.querySelectorAll(".footer_share_buttons_item")[2]
 //!LISTENERS
 //!-----------------------------------------
 //*DARK MODE
-ButtonDarkMode.addEventListener("click", () => {enableDarkMode();});
+ButtonDarkMode.addEventListener("click", () => { enableDarkMode(); });
 //*CREATE BURGER'S HRs
 hr1 = document.createElement("hr");
 hr2 = document.createElement("hr");
@@ -73,27 +81,44 @@ NavBurger.addEventListener("click", () => {
   }
 });
 
+
 //*SEARCH
 //TRENDING TAGS
 function generateTagListeners() {
   for (let i = 0; i < 5; i++) {
     TrendingTags.querySelectorAll(".trending_tag")[i].addEventListener("click", () => {
       SearchBar.value = TrendingTags.querySelectorAll(".trending_tag")[i].innerHTML;
+      NavSearchBar.value = TrendingTags.querySelectorAll(".trending_tag")[i].innerHTML;
       searchStart();
     })
   }
 }
 //SEARCH ACTION
 SearchPurple.addEventListener("click", () => { searchStart() });
+NavSearchPurple.addEventListener("click", () => {
+  SearchBar.value = NavSearchBar.value;
+  searchStart();
+});
 SearchBar.addEventListener("keypress", (input) => {
   if (input.charCode === 13) {
     searchStart()
   }
 });
+NavSearchBar.addEventListener("keypress", (input) => {
+  if (input.charCode === 13) {
+    SearchBar.value = NavSearchBar.value;
+    searchStart();
+  }
+});
 SearchBar.addEventListener("focus", () => { searchActive() });
+NavSearchBar.addEventListener("focus", () => { searchActive() });
 SearchGray.addEventListener("click", () => { searchStart() });
-SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; SearchSection.innerHTML = "";});
-
+NavSearchGray.addEventListener("click", () => {
+  SearchBar.value = NavSearchBar.value;
+  searchStart();
+});
+SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
+NavSearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
 
 //*TRENDING ARROWS
 TrendingRightArrow.addEventListener("click", () => {
