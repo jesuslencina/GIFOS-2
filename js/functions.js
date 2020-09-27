@@ -117,8 +117,11 @@ function maximizeGIFO(selected) {
   //CREATE ELEMENT
   div = document.createElement("div");
   div.classList.add("max");
-  div.innerHTML = `<img src="${url}" alt="${title}">`
-  document.body.insertBefore(div, document.querySelector(".hero"));
+  div.innerHTML = `
+  <img src="assets/close.svg" alt"Cerrar" class="BtnClose">
+  <img src="${url}" alt="${title}" class="gifo">
+  `
+  document.body.insertBefore(div, SearchSection);
 }
 //!-----------------------------------------
 //!TRENDING
