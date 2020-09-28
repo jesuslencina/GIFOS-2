@@ -96,13 +96,18 @@ function renderFavGifos() {
                 localStorage.setItem("FAVGIFOS", JSON.stringify(FavArray));
                 renderFavGifos();
             })
+
+             //download
+             buttons[1].addEventListener("click", () => {
+                downloadGifo(FavArray[i].url, FavArray[i].title);
+            });
+
             //maximize
             buttons[2].addEventListener("click", () => {
                 maximizeGIFO(gifoo);
             });
-            buttons[1].addEventListener("click", () => {
-                console.log(gifoo);
-            });
+
+           
             //!HOVER LISTENERS
             //fav button
             buttons[0].addEventListener("mouseover", () => {

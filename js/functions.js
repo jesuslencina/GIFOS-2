@@ -87,6 +87,12 @@ function genenerateGifoButtons(selected) {
     favItem = new FAVGIFO(FavArray.length, selected.querySelector(".gifo_title").innerHTML, selected.querySelector(".gifo_user").innerHTML, selected.querySelector("img").src);
 
   })
+  
+  //download
+  buttons[1].addEventListener("click", ()=> {
+    downloadGifo(selected.querySelector("img").src, selected.querySelector(".gifo_title").innerHTML)
+  });
+
   //maximize
   buttons[2].addEventListener("click", () => {
     maximizeGIFO(selected);
@@ -94,6 +100,7 @@ function genenerateGifoButtons(selected) {
   buttons[1].addEventListener("click", () => {
     console.log(selected);
   });
+
   //!HOVER LISTENERS
   //fav button
   buttons[0].addEventListener("mouseover", () => {
@@ -109,6 +116,7 @@ function genenerateGifoButtons(selected) {
   buttons[1].addEventListener("mouseout", () => {
     buttons[1].src = "assets/icon-download.svg";
   });
+  
   //expand button
   buttons[2].addEventListener("mouseover", () => {
     buttons[2].src = "assets/icon-max-hover.svg";
@@ -134,7 +142,6 @@ function maximizeGIFO(selected) {
   //!BUTTONS
   let buttons = MaxSection.querySelectorAll(".bottomz img");
   //fav
-
   buttons[0].addEventListener("click", () => {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
     favItem = new FAVGIFO(FavArray.length, username, title, url);
@@ -145,9 +152,19 @@ function maximizeGIFO(selected) {
   buttons[0].addEventListener("mouseout", () => {
     buttons[0].src = "assets/icon-fav.svg";
   });
+//download 
+buttons[1].addEventListener("click", ()=> {
+  downloadGifo(MaxSection.querySelector(".gifo").src, MaxSection.querySelector(".title").innerHTML)
+});
+buttons[1].addEventListener("mouseover", () => {
+  buttons[1].src = "assets/icon-download-hover.svg";
+});
+buttons[1].addEventListener("mouseout", () => {
+  buttons[1].src = "assets/icon-download.svg";
+});
 }
 
-//*MIMIZE GIFO
+//*MINIMIZE GIFO
 MaxSection.querySelector(".closez").addEventListener("click", () => {
   MaxSection.classList.add("hidden");
   HeroSection.classList.remove("hidden");
@@ -157,7 +174,7 @@ MaxSection.querySelector(".closez").addEventListener("click", () => {
 //*DOWNLOAD GIFO
 async function downloadGifo(url, title) {
   let blob = await fetch(url).then(img => img.blob());
-  console.log(blob, title + ".gif");
+  invokeSaveAsDialog(blob, title + ".gif");
 }
 //!-----------------------------------------
 //!TRENDING
