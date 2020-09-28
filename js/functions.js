@@ -118,6 +118,8 @@ function maximizeGIFO(selected) {
   MaxSection.querySelector(".username").innerHTML = username;
   MaxSection.querySelector(".gifo").src = url;
   MaxSection.classList.remove("hidden");
+  HeroSection.classList.add("hidden");
+  window.scrollTo(0, 0);
 }
 //!-----------------------------------------
 //!TRENDING

@@ -30,6 +30,7 @@ const NavULitems = document.querySelectorAll(".nav_container_items li");
 //DARKMODE
 const ButtonDarkMode = document.getElementById("BtnDarkMode");
 //*HERO
+const HeroSection = document.querySelector(".hero");
 const TrendingTags = document.querySelector(".hero_trending_tags");
 //*SEARCHBAR
 const SearchBar = document.querySelector(".searchbar");

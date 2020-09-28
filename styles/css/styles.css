@@ -941,6 +941,7 @@ body.darkMode .footer_copyright {
 .max {
   margin: 0 auto;
   width: 50vw;
+  margin-top: 9rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -981,6 +982,11 @@ body.darkMode .footer_copyright {
 
 .max .close-container .closez:hover {
   background-color: #9CAFC3;
+  cursor: pointer;
+}
+
+body.darkMode .max .close-container .closez {
+  border-color: white;
 }
 
 .max .gifo {
@@ -1008,6 +1014,10 @@ body.darkMode .footer_copyright {
       -ms-flex-direction: column;
           flex-direction: column;
   justify-self: left;
+}
+
+body.darkMode .max .bottomz .dataz {
+  color: white;
 }
 
 .max .bottomz .dataz .username {
