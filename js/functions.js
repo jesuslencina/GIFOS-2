@@ -198,7 +198,9 @@ function navSearch() {
 
   function navSearchShow() {
     NavSearch.classList.remove("hidden");
-    NavSearchBar.value = SearchBar.value; ///?
+    if (SearchBar.value != "") {
+      NavSearchBar.value = SearchBar.value; 
+    }
     Nav.style.borderBottom = "1pt solid black";
   }
   //NAVBAR'S SEARCHBAR

@@ -122,7 +122,7 @@ SearchGray.addEventListener("click", () => { searchStart() });
 SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
 
 //?NAV'S SEARCHBAR
-NavSearchBar.addEventListener("focus", () => { searchActive() });
+
 NavSearchGray.addEventListener("click", () => {
   SearchBar.value = NavSearchBar.value;
   searchStart();

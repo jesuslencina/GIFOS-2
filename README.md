@@ -22,7 +22,6 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 
 - Save GIFOS feature
 - Download GIFOS feature
-- FIX Search bar on navigation bar when scrolling down (extremely buggy right now)
 - Create GIFOS feature
 
 ## Technologies used for this project:
