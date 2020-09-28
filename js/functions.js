@@ -86,11 +86,11 @@ function genenerateGifoButtons(selected) {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
     favItem = new FAVGIFO(FavArray.length, selected.querySelector(".gifo_title").innerHTML, selected.querySelector(".gifo_user").innerHTML, selected.querySelector("img").src);
     buttons[0].src = "assets/icon-fav-active.svg";
-    
+
   })
-  
+
   //download
-  buttons[1].addEventListener("click", ()=> {
+  buttons[1].addEventListener("click", () => {
     downloadGifo(selected.querySelector("img").src, selected.querySelector(".gifo_title").innerHTML)
   });
 
@@ -117,7 +117,7 @@ function genenerateGifoButtons(selected) {
   buttons[1].addEventListener("mouseout", () => {
     buttons[1].src = "assets/icon-download.svg";
   });
-  
+
   //expand button
   buttons[2].addEventListener("mouseover", () => {
     buttons[2].src = "assets/icon-max-hover.svg";
@@ -154,16 +154,16 @@ function maximizeGIFO(selected) {
   buttons[0].addEventListener("mouseout", () => {
     buttons[0].src = "assets/icon-fav.svg";
   });
-//download 
-buttons[1].addEventListener("click", ()=> {
-  downloadGifo(MaxSection.querySelector(".gifo").src, MaxSection.querySelector(".title").innerHTML)
-});
-buttons[1].addEventListener("mouseover", () => {
-  buttons[1].src = "assets/icon-download-hover.svg";
-});
-buttons[1].addEventListener("mouseout", () => {
-  buttons[1].src = "assets/icon-download.svg";
-});
+  //download 
+  buttons[1].addEventListener("click", () => {
+    downloadGifo(MaxSection.querySelector(".gifo").src, MaxSection.querySelector(".title").innerHTML)
+  });
+  buttons[1].addEventListener("mouseover", () => {
+    buttons[1].src = "assets/icon-download-hover.svg";
+  });
+  buttons[1].addEventListener("mouseout", () => {
+    buttons[1].src = "assets/icon-download.svg";
+  });
 }
 
 //*MINIMIZE GIFO
@@ -248,11 +248,13 @@ function fillSearchSuggestions(array) {
       search(array[i].title);
       hideSearchSuggestions();
       searchDisable();
+      
       Iterations = 0;
       offsetS = 0;
       SearchSection.innerHTML = "";
       SearchedGIFOS = [];
       SearchSection.classList.remove("hidden");
+      SearchSection.scrollIntoView()
     })
   }
 }
@@ -321,6 +323,8 @@ function searchDisable() {
 //*CALL API
 function searchStart() {
   if (SearchBar.value != "") {
+    //SCROLL TO SECTION
+    SearchSection.scrollIntoView()
     //CLEAN
     Iterations = 0;
     offsetS = 0;
