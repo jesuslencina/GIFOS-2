@@ -102,6 +102,13 @@ ButtonFavs.addEventListener("click", () => {
   FavSection.classList.remove("hidden")
   MaxSection.classList.add("hidden");
   NavUL.style.display = "none";
+  burgerOpen = false;
+    //CHECK FOR DARK MODE
+    if (darkModeEnabled == false) {
+      NavBurger.src = "assets/burger.svg";
+    } else {
+      NavBurger.src = "assets/burger-modo-noct.svg";
+    }
   retrieveFavs();
 })
 

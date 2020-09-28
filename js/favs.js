@@ -46,7 +46,7 @@ function FAVGIFO(index, author, title, url) {
 function renderFavGifos() {
     FavSection.innerHTML = `<img src="assets/icon-favoritos.svg" alt="Favoritos"> 
     <h4>Favoritos</h4>`;
-    
+
     if (FavArray.length == 0) {
         div = document.createElement("div");
         div.style = "display:flex; flex-direction: column; align-items: center; margin-top: 4rem"
@@ -81,12 +81,18 @@ function renderFavGifos() {
                 gifoo.querySelector(".gifoHover").classList.add("hidden");
             });
             let buttons = gifoo.querySelectorAll(".gifo_buttonbar img");
+            //MEDIA QUERY (IF ON MOBILE, THE CLICK WILL MAXIMIZE GIFO)
+            if (window.matchMedia("(max-width: 1000px)").matches) {
+                gifoo.addEventListener("click", () => {
+                    maximizeGIFO(gifoo);
+                });
+            }
             ////BUTTONS
             //!CLICK LISTENERS
             //fav
             buttons[0].addEventListener("click", () => {
                 console.log("Borrando GIFO: " + gifoo.querySelector(".gifo_title").innerHTML)
-                FavArray.splice(i,1);
+                FavArray.splice(i, 1);
                 localStorage.setItem("FAVGIFOS", JSON.stringify(FavArray));
                 renderFavGifos();
             })

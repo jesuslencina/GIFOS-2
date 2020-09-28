@@ -129,6 +129,7 @@ function maximizeGIFO(selected) {
   MaxSection.querySelector(".gifo").src = url;
   MaxSection.classList.remove("hidden");
   HeroSection.classList.add("hidden");
+  FavSection.classList.add("hidden");
   window.scrollTo(0, 0);
   //!BUTTONS
   let buttons = MaxSection.querySelectorAll(".bottomz img");
@@ -150,6 +151,7 @@ function maximizeGIFO(selected) {
 MaxSection.querySelector(".closez").addEventListener("click", () => {
   MaxSection.classList.add("hidden");
   HeroSection.classList.remove("hidden");
+  FavSection.classList.add("hidden");
 });
 
 //*DOWNLOAD GIFO
