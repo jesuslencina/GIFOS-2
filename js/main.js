@@ -105,6 +105,7 @@ function generateTagListeners() {
 }
 //SEARCH ACTION
 //?HERO'S SEARCHBAR
+SearchBar.addEventListener("input", () => {suggest(SearchBar.value)})
 SearchPurple.addEventListener("click", () => { searchStart() });
 SearchBar.addEventListener("keypress", (input) => {
   if (input.charCode === 13) {

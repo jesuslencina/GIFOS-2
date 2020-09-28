@@ -16,6 +16,8 @@ function enableDarkMode() {
     TwitterIcon.src = "assets/icon_twitter_noc.svg";
     InstagramIcon.src = "assets/icon_instagram_noc.svg";
     SearchPurple.src = "assets/icon-search-modo-noct.svg";
+    //STYLES
+    SearchBar.style.borderBottom = "1pt solid #9CAFC3";
     //LOCALSTORAGE
     localStorage.setItem("COLORMODE", "dark");
   } else {
@@ -31,6 +33,8 @@ function enableDarkMode() {
     TwitterIcon.src = "assets/icon-tw-normal.svg";
     InstagramIcon.src = "assets/icon_instagram.svg";
     SearchPurple.src = "assets/icon-search.svg";
+    //STYLES
+    SearchBar.style.borderBottom = "1pt solid #572EE5";
     //LOCALSSTORAGE
     localStorage.setItem("COLORMODE", "light");
   }
@@ -78,7 +82,7 @@ function genenerateGifoButtons(selected) {
 
   //!CLICK LISTENERS
   //fav
-  buttons[0].addEventListener("click", () =>{
+  buttons[0].addEventListener("click", () => {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
     //TODO HERE
   })
@@ -135,8 +139,8 @@ MaxSection.querySelector(".closez").addEventListener("click", () => {
 
 //*DOWNLOAD GIFO
 async function downloadGifo(url, title) {
-    let blob = await fetch(url).then(img => img.blob());
-    console.log(blob, title + ".gif");
+  let blob = await fetch(url).then(img => img.blob());
+  console.log(blob, title + ".gif");
 }
 //!-----------------------------------------
 //!TRENDING
@@ -194,7 +198,7 @@ function renderTrendingGifos(offset) {
 //!SEARCH
 //!-----------------------------------------
 //*AUTOCOMPLETE WITH SUGGESTIONS
-function fillSearchSuggestions(array){
+function fillSearchSuggestions(array) {
   AutocompleteUL.classList.remove("hidden");
   AutocompleteUL.innerHTML = "";
   SearchBar.style.borderRadius = "27px 27px 0 0";
@@ -204,15 +208,26 @@ function fillSearchSuggestions(array){
     li.innerHTML = `<img src="../../assets/icon-search.svg" class="suggestButton"></img><p>${array[i].title}</p>`;
     AutocompleteUL.appendChild(li);
     li.addEventListener("click", () => {
-      search(array[i].title)
-
+      search(array[i].title);
+      hideSearchSuggestions();
+      searchDisable();
+      Iterations = 0;
+      offsetS = 0;
+      SearchSection.innerHTML = "";
+      SearchedGIFOS = [];
+      SearchSection.classList.remove("hidden");
     })
   }
 }
 //*HIDE AUTOCOMPLETE W. SUGGESTIONS
-function hideSearchSuggestions(){
+function hideSearchSuggestions() {
   SearchBar.style.borderRadius = "27px";
-  SearchBar.style.borderBottom = "1pt solid #572EE5";
+  if (darkModeEnabled == false) {
+    SearchBar.style.borderBottom = "1pt solid #572EE5";
+  } else {
+    SearchBar.style.borderBottom = "1pt solid #9CAFC3";
+  }
+
   AutocompleteUL.classList.add("hidden");
 }
 
@@ -283,7 +298,7 @@ function searchStart() {
 }
 
 //*GENERATE SEARCHED GIFOS
-function fillSearchedGifos(array,input) {
+function fillSearchedGifos(array, input) {
   for (let i = 0; i < array.length; i++) {
     let newgifo = new GIFO(
       i + offsetS,
