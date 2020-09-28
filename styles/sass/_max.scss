@@ -1,26 +1,32 @@
 .max {
   margin: 0 auto;
-  background-color: red;
   width: 50vw;
   height: fit-content;
-  z-index: 8;
-  background-color: $White;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .closez{
-   padding: 1em;
-   
+  .close-container {
+    display: flex;
+    flex-direction: row;
+    width: 52rem;
+    align-items: flex-end;
+    justify-content: flex-end;
+    .closez {
+      padding: 1em;
+      border: 1pt solid $Purple;
+      border-radius: 27px;
+      &:hover {
+        background-color: $SemiLightGray;
+      }
+    }
   }
-
   .gifo {
-    width: 44rem;
+    width: 22rem * 2;
     height: 28rem;
   }
   .bottomz {
     display: flex;
+    justify-content: space-between;
     width: 44rem;
     margin-top: 1em;
     .dataz {
@@ -37,9 +43,28 @@
         font-weight: $Bold;
       }
     }
-    .buttonz{
-        display: flex;
-        justify-self: flex-end;
+    .buttonz {
+      display: flex;
+      width: 5rem;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: $Query){
+  .max{
+    width: 100vw;
+    height: 75vh;
+    .close-container{
+      width: 90vw;
+    }
+    .gifo{
+      margin-top: 2.5rem;
+      width: 90vw;
+      height: 40vh;
+    }
+    .bottomz{
+      width: 90vw;
     }
   }
 }

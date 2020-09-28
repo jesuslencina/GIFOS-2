@@ -114,25 +114,10 @@ function maximizeGIFO(selected) {
   let title = selected.querySelector(".gifo_title").innerHTML;
   let url = selected.querySelector("img").src;
   console.log("Maximizando GIFO: " + title);
-  //CREATE ELEMENT
-  div = document.createElement("div");
-  div.classList.add("max");
-  div.innerHTML = `
-  <img src="assets/close.svg" alt"Cerrar" class="closez">
-  <img src="${url}" alt="${title}" class="gifo">
-  <div class="bottomz">
-  <div class="dataz">
-    <p class="username">${username}</p>
-    <p class="title">${title}</p>
-  </div>
-  <div class="buttonz">
-    <img src="assets/icon-fav.svg" class="favz" alt"Guardar GIFO">
-    <img src="assets/icon-download.svg" class="downloadz" alt"Descargar GIFO">
-  </div>
-  </div>
-  `
-  //APPEND ELEMENT
-  document.body.insertBefore(div, SearchSection);
+  MaxSection.querySelector(".title").innerHTML = title;
+  MaxSection.querySelector(".username").innerHTML = username;
+  MaxSection.querySelector(".gifo").src = url;
+  MaxSection.classList.remove("hidden");
 }
 //!-----------------------------------------
 //!TRENDING

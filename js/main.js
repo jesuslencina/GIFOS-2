@@ -36,6 +36,8 @@ const SearchBar = document.querySelector(".searchbar");
 const SearchPurple = document.querySelector(".searchIconPurple");
 const SearchGray = document.querySelector(".searchIconGray");
 const SearchClose = document.querySelector(".searchClose");
+//*MAX SECTION
+const MaxSection = document.querySelector(".max");
 //*SEARCH RESULTS
 const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION
