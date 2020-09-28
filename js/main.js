@@ -100,6 +100,8 @@ NavBurger.addEventListener("click", () => {
 ButtonFavs.addEventListener("click", () => {
   HeroSection.classList.add("hidden")
   FavSection.classList.remove("hidden")
+  MaxSection.classList.add("hidden");
+  NavUL.style.display = "none";
   retrieveFavs();
 })
 

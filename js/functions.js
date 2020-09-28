@@ -84,8 +84,8 @@ function genenerateGifoButtons(selected) {
   //fav
   buttons[0].addEventListener("click", () => {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
-    favItem = new FAVGIFO(FavArray.length ,selected.querySelector(".gifo_title").innerHTML,selected.querySelector(".gifo_user").innerHTML,selected.querySelector("img").src);
-    
+    favItem = new FAVGIFO(FavArray.length, selected.querySelector(".gifo_title").innerHTML, selected.querySelector(".gifo_user").innerHTML, selected.querySelector("img").src);
+
   })
   //maximize
   buttons[2].addEventListener("click", () => {
@@ -130,6 +130,20 @@ function maximizeGIFO(selected) {
   MaxSection.classList.remove("hidden");
   HeroSection.classList.add("hidden");
   window.scrollTo(0, 0);
+  //!BUTTONS
+  let buttons = MaxSection.querySelectorAll(".bottomz img");
+  //fav
+
+  buttons[0].addEventListener("click", () => {
+    console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
+    favItem = new FAVGIFO(FavArray.length, username, title, url);
+  })
+  buttons[0].addEventListener("mouseover", () => {
+    buttons[0].src = "assets/icon-fav-hover.svg";
+  });
+  buttons[0].addEventListener("mouseout", () => {
+    buttons[0].src = "assets/icon-fav.svg";
+  });
 }
 
 //*MIMIZE GIFO
