@@ -53,7 +53,13 @@ const InstagramIcon = document.querySelectorAll(".footer_share_buttons_item")[2]
 //!LISTENERS
 //!-----------------------------------------
 //*DARK MODE
-ButtonDarkMode.addEventListener("click", () => { enableDarkMode(); });
+ButtonDarkMode.addEventListener("click", () => {
+  enableDarkMode(); if (darkModeEnabled == false) {
+    NavBurger.src = "assets/close.svg";
+  } else {
+    NavBurger.src = "assets/close-modo-noct.svg";
+  }
+});
 //*CREATE BURGER'S HRs
 hr1 = document.createElement("hr");
 hr2 = document.createElement("hr");
@@ -119,7 +125,7 @@ NavSearchBar.addEventListener("keypress", (input) => {
 //?HERO'S SEARCHBAR
 SearchBar.addEventListener("focus", () => { searchActive() });
 SearchGray.addEventListener("click", () => { searchStart() });
-SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
+SearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value = ""; SearchSection.innerHTML = ""; });
 
 //?NAV'S SEARCHBAR
 
@@ -127,7 +133,7 @@ NavSearchGray.addEventListener("click", () => {
   SearchBar.value = NavSearchBar.value;
   searchStart();
 });
-NavSearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value =""; SearchSection.innerHTML = ""; });
+NavSearchClose.addEventListener("click", () => { searchDisable(); SearchBar.value = ""; NavSearchBar.value = ""; SearchSection.innerHTML = ""; });
 
 //*TRENDING ARROWS
 TrendingRightArrow.addEventListener("click", () => {
@@ -139,14 +145,14 @@ TrendingRightArrow.addEventListener("click", () => {
   renderTrendingGifos(sliderOffset)
 });
 
-TrendingRightArrow.addEventListener("mouseover", ()  =>{
+TrendingRightArrow.addEventListener("mouseover", () => {
   TrendingRightArrow.src = "assets/button-slider-right-hover.svg"
 });
 
-TrendingRightArrow.addEventListener("mouseout", ()  =>{
-  if(darkModeEnabled == false){
+TrendingRightArrow.addEventListener("mouseout", () => {
+  if (darkModeEnabled == false) {
     TrendingRightArrow.src = "assets/Button-Slider-right.svg"
-  }else{
+  } else {
     TrendingRightArrow.src = "assets/button-slider-right-md-noct.svg";
   }
 });
@@ -160,55 +166,55 @@ TrendingLeftArrow.addEventListener("click", () => {
   renderTrendingGifos(sliderOffset)
 });
 
-TrendingLeftArrow.addEventListener("mouseover", ()  =>{
+TrendingLeftArrow.addEventListener("mouseover", () => {
   TrendingLeftArrow.src = "assets/button-slider-left-hover.svg"
 });
 
-TrendingLeftArrow.addEventListener("mouseout", ()  =>{
-  if(darkModeEnabled == false){
+TrendingLeftArrow.addEventListener("mouseout", () => {
+  if (darkModeEnabled == false) {
     TrendingLeftArrow.src = "assets/button-slider-left.svg"
-  }else{
+  } else {
     TrendingLeftArrow.src = "assets/button-slider-left-md-noct.svg";
   }
 });
 
 //*SOCIAL ICONS
 FacebookIcon.addEventListener("click", () => {
-  window.location.href ="https://www.facebook.com/";
+  window.location.href = "https://www.facebook.com/";
 });
 FacebookIcon.addEventListener("mouseover", () => {
   FacebookIcon.src = "assets/icon_facebook_hover.svg";
 });
 FacebookIcon.addEventListener("mouseout", () => {
-  if(darkModeEnabled == false){
+  if (darkModeEnabled == false) {
     FacebookIcon.src = "assets/icon_facebook.svg";
-  } else{
+  } else {
     FacebookIcon.src = "assets/icon_facebook_noc.svg"
   }
 });
 TwitterIcon.addEventListener("click", () => {
-  window.location.href ="https://twitter.com/home?lang=fr";
+  window.location.href = "https://twitter.com/home?lang=fr";
 });
 TwitterIcon.addEventListener("mouseover", () => {
   TwitterIcon.src = "assets/icon-twitter-hover.svg";
 });
 TwitterIcon.addEventListener("mouseout", () => {
-  if(darkModeEnabled == false){
+  if (darkModeEnabled == false) {
     TwitterIcon.src = "assets/icon-twitter.svg";
-  } else{
+  } else {
     TwitterIcon.src = "assets/icon_twitter_noc.svg"
   }
 });
 InstagramIcon.addEventListener("click", () => {
-  window.location.href ="https://www.instagram.com/";
+  window.location.href = "https://www.instagram.com/";
 });
 InstagramIcon.addEventListener("mouseover", () => {
   InstagramIcon.src = "assets/icon_instagram-hover.svg";
 });
 InstagramIcon.addEventListener("mouseout", () => {
-  if(darkModeEnabled == false){
+  if (darkModeEnabled == false) {
     InstagramIcon.src = "assets/icon_instagram.svg";
-  } else{
+  } else {
     InstagramIcon.src = "assets/icon_instagram_noc.svg"
   }
 });
