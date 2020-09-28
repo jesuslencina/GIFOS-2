@@ -16,11 +16,12 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 
 - View as many as you want: Want more? Click the "VER MÁS" button to display twelve more GIFOS! You can do this as many times as you want, until there are no more GIFOS for your search.
 
+- Want to save a cool GIFO? Use the save feature! No need to register, your data will be stored on your browser! Access your saved GIFOS anytime from "Favoritos" (Available in the navigation bar or the burger menu)
+
 - Night-Friendly browsing: Too much light for the moment? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime. The site will remember your choice!
 
 ## TODO:
 
-- Save GIFOS feature
 - Download GIFOS feature
 - Create GIFOS feature
 
