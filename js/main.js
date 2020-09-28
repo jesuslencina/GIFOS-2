@@ -37,6 +37,7 @@ const SearchBar = document.querySelector(".searchbar");
 const SearchPurple = document.querySelector(".searchIconPurple");
 const SearchGray = document.querySelector(".searchIconGray");
 const SearchClose = document.querySelector(".searchClose");
+const AutocompleteUL = document.querySelector(".autocomplete");
 //*MAX SECTION
 const MaxSection = document.querySelector(".max");
 //*SEARCH RESULTS

@@ -77,6 +77,11 @@ function genenerateGifoButtons(selected) {
   let buttons = selected.querySelectorAll(".gifo_buttonbar img");
 
   //!CLICK LISTENERS
+  //fav
+  buttons[0].addEventListener("click", () =>{
+    console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
+    //TODO HERE
+  })
   //maximize
   buttons[2].addEventListener("click", () => {
     maximizeGIFO(selected);
@@ -84,7 +89,7 @@ function genenerateGifoButtons(selected) {
   buttons[1].addEventListener("click", () => {
     console.log(selected);
   });
-  //HOVER LISTENERS
+  //!HOVER LISTENERS
   //fav button
   buttons[0].addEventListener("mouseover", () => {
     buttons[0].src = "assets/icon-fav-hover.svg";
@@ -188,6 +193,29 @@ function renderTrendingGifos(offset) {
 //!-----------------------------------------
 //!SEARCH
 //!-----------------------------------------
+//*AUTOCOMPLETE WITH SUGGESTIONS
+function fillSearchSuggestions(array){
+  AutocompleteUL.classList.remove("hidden");
+  AutocompleteUL.innerHTML = "";
+  SearchBar.style.borderRadius = "27px 27px 0 0";
+  SearchBar.style.borderBottom = "none";
+  for (let i = 0; i < 5; i++) {
+    let li = document.createElement("li");
+    li.innerHTML = `<img src="../../assets/icon-search.svg" class="suggestButton"></img><p>${array[i].title}</p>`;
+    AutocompleteUL.appendChild(li);
+    li.addEventListener("click", () => {
+      search(array[i].title)
+
+    })
+  }
+}
+//*HIDE AUTOCOMPLETE W. SUGGESTIONS
+function hideSearchSuggestions(){
+  SearchBar.style.borderRadius = "27px";
+  SearchBar.style.borderBottom = "1pt solid #572EE5";
+  AutocompleteUL.classList.add("hidden");
+}
+
 //*NAVBAR'S SEARCH INPUT
 function navSearch() {
   if (window.matchMedia("(max-width: 800px)").matches) {
@@ -255,7 +283,7 @@ function searchStart() {
 }
 
 //*GENERATE SEARCHED GIFOS
-function fillSearchedGifos(array) {
+function fillSearchedGifos(array,input) {
   for (let i = 0; i < array.length; i++) {
     let newgifo = new GIFO(
       i + offsetS,
@@ -265,11 +293,12 @@ function fillSearchedGifos(array) {
     );
     SearchedGIFOS.push(newgifo);
   }
-  renderSearchedGifos(SearchedGIFOS);
+  renderSearchedGifos(SearchedGIFOS, input);
 }
 
 //*RENDER SEARCHED GIFOS
-function renderSearchedGifos(array) {
+function renderSearchedGifos(array, input) {
+  console.log(input)
   //ONLY IF IT'S THE 1ST TIME
   if (offsetS == 0) {
     //CLEAN
@@ -280,7 +309,7 @@ function renderSearchedGifos(array) {
     SearchSection.appendChild(hr);
     //H3
     h3 = document.createElement("h3");
-    h3.innerHTML = SearchBar.value;
+    h3.innerHTML = input;
     SearchSection.appendChild(h3);
   }
   //IF NO RESULTS

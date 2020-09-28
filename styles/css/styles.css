@@ -165,6 +165,35 @@ body.darkMode .search_container .searchbar {
   top: 35%;
 }
 
+.autocomplete {
+  width: 33.8rem;
+  border: 1pt solid #572EE5;
+  border-top: none;
+  border-radius: 0 0 27px 27px;
+  list-style: none;
+  opacity: 60%;
+}
+
+.autocomplete li {
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem;
+}
+
+.autocomplete li p {
+  display: inline;
+  padding-left: 1rem;
+}
+
+.autocomplete li:last-of-type {
+  border-radius: 0 0 27px 27px;
+  border-bottom: none;
+}
+
+.autocomplete li:hover {
+  background-color: rgba(173, 173, 173, 0.698);
+  cursor: pointer;
+}
+
 .nav_search_container {
   -ms-flex-item-align: center;
       align-self: center;

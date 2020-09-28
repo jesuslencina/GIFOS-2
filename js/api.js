@@ -44,7 +44,19 @@ async function search(input) {
     .then(response => { return (response.json()) })
         .then(json => {
             console.log(json);
-            fillSearchedGifos(json.data);
+            console.log(input)
+            fillSearchedGifos(json.data, input);
+        })
+        .catch(err => console.log(err))
+}
+
+//!GET SEARCH SUGGESTIONS
+async function suggest(input) {
+    await fetch(apiEndpointSearch + "?api_key=" + apiKey + "&q=" + input + "&limit=" + 5 + "&rating=g")
+    .then(response => { return (response.json()) })
+        .then(json => {
+            console.log(json);
+            fillSearchSuggestions(json.data);
         })
         .catch(err => console.log(err))
 }
