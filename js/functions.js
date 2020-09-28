@@ -84,7 +84,8 @@ function genenerateGifoButtons(selected) {
   //fav
   buttons[0].addEventListener("click", () => {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
-    //TODO HERE
+    favItem = new FAVGIFO(FavArray.length ,selected.querySelector(".gifo_title").innerHTML,selected.querySelector(".gifo_user").innerHTML,selected.querySelector("img").src);
+    
   })
   //maximize
   buttons[2].addEventListener("click", () => {

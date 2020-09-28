@@ -1096,6 +1096,72 @@ body.darkMode .max .bottomz .dataz {
   }
 }
 
+.favs {
+  margin-top: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.favs h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #572EE5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+}
+
+body.darkMode .favs h4 {
+  color: white;
+}
+
+.favs .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.favs .container .gifo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.75em;
+}
+
+.favs .container .gifo .gifoHover {
+  top: 0.8em;
+  left: 0.75em;
+}
+
+.favs .noresult {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #5ED7C6;
+  font-size: 22px;
+  text-transform: none;
+  margin-top: 2.5rem;
+  width: 70%;
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }

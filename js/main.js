@@ -29,6 +29,8 @@ const NavUL = document.querySelector(".nav_container_items");
 const NavULitems = document.querySelectorAll(".nav_container_items li");
 //DARKMODE
 const ButtonDarkMode = document.getElementById("BtnDarkMode");
+//FAVS
+const ButtonFavs = document.getElementById("BtnFavs");
 //*HERO
 const HeroSection = document.querySelector(".hero");
 const TrendingTags = document.querySelector(".hero_trending_tags");
@@ -40,6 +42,8 @@ const SearchClose = document.querySelector(".searchClose");
 const AutocompleteUL = document.querySelector(".autocomplete");
 //*MAX SECTION
 const MaxSection = document.querySelector(".max");
+//*FAV SECTION
+const FavSection = document.querySelector(".favs") 
 //*SEARCH RESULTS
 const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION
@@ -91,6 +95,13 @@ NavBurger.addEventListener("click", () => {
   }
 });
 
+
+//*FAVS SECTION
+ButtonFavs.addEventListener("click", () => {
+  HeroSection.classList.add("hidden")
+  FavSection.classList.remove("hidden")
+  retrieveFavs();
+})
 
 //*SEARCH
 //TRENDING TAGS
