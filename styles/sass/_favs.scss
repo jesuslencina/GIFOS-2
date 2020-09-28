@@ -42,6 +42,35 @@
   }
 }
 
+.volver{
+  font-family: $Montserrat;
+  font-weight: $Bold;
+  font-size: 13px;
+  color: $Purple;
+  background-color: $White;
+  border: 1pt solid $Purple;
+  border-radius: 27px;
+  padding: 0.75rem;
+  transition: none;
+  margin-top: 2rem;
+  margin-bottom: 1.65rem;
+  &:hover{
+    color: $White;
+    background-color: $Purple;
+    cursor: pointer;
+  }
+  body.dark & {
+    border-color: $SemiLightGray;
+    background-color: $Gray;
+    color: white;
+    &:hover{
+      color: rgba(255, 255, 255, 0.568);
+      background-color: gray;
+      cursor: pointer;
+    }
+  }
+}
+
 @media screen and (max-width: $Query) {
     .container {
       align-items: center;

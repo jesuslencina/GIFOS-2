@@ -43,7 +43,7 @@ const AutocompleteUL = document.querySelector(".autocomplete");
 //*MAX SECTION
 const MaxSection = document.querySelector(".max");
 //*FAV SECTION
-const FavSection = document.querySelector(".favs") 
+const FavSection = document.querySelector(".favs")
 //*SEARCH RESULTS
 const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION
@@ -96,19 +96,22 @@ NavBurger.addEventListener("click", () => {
 });
 
 
+
 //*FAVS SECTION
 ButtonFavs.addEventListener("click", () => {
   HeroSection.classList.add("hidden")
   FavSection.classList.remove("hidden")
   MaxSection.classList.add("hidden");
-  NavUL.style.display = "none";
-  burgerOpen = false;
-    //CHECK FOR DARK MODE
-    if (darkModeEnabled == false) {
-      NavBurger.src = "assets/burger.svg";
-    } else {
-      NavBurger.src = "assets/burger-modo-noct.svg";
-    }
+  if (burgerOpen == true) {
+    NavUL.style.display = "none";
+    burgerOpen = false;
+  }
+  //CHECK FOR DARK MODE
+  if (darkModeEnabled == false) {
+    NavBurger.src = "assets/burger.svg";
+  } else {
+    NavBurger.src = "assets/burger-modo-noct.svg";
+  }
   retrieveFavs();
 })
 
@@ -125,7 +128,7 @@ function generateTagListeners() {
 }
 //SEARCH ACTION
 //?HERO'S SEARCHBAR
-SearchBar.addEventListener("input", () => {suggest(SearchBar.value)})
+SearchBar.addEventListener("input", () => { suggest(SearchBar.value) })
 SearchPurple.addEventListener("click", () => { searchStart() });
 SearchBar.addEventListener("keypress", (input) => {
   if (input.charCode === 13) {

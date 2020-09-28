@@ -45,8 +45,13 @@ function FAVGIFO(index, author, title, url) {
 //*RENDER GIFOS
 function renderFavGifos() {
     FavSection.innerHTML = `<img src="assets/icon-favoritos.svg" alt="Favoritos"> 
-    <h4>Favoritos</h4>`;
-
+    <h4>Favoritos</h4>
+    <button class="volver">VOLVER</button>`;
+    document.querySelector(".volver").addEventListener("click", () => {
+        MaxSection.classList.add("hidden");
+        HeroSection.classList.remove("hidden");
+        FavSection.classList.add("hidden");
+    });
     if (FavArray.length == 0) {
         div = document.createElement("div");
         div.style = "display:flex; flex-direction: column; align-items: center; margin-top: 4rem"
@@ -97,8 +102,8 @@ function renderFavGifos() {
                 renderFavGifos();
             })
 
-             //download
-             buttons[1].addEventListener("click", () => {
+            //download
+            buttons[1].addEventListener("click", () => {
                 downloadGifo(FavArray[i].url, FavArray[i].title);
             });
 
@@ -107,7 +112,7 @@ function renderFavGifos() {
                 maximizeGIFO(gifoo);
             });
 
-           
+
             //!HOVER LISTENERS
             //fav button
             buttons[0].addEventListener("mouseover", () => {

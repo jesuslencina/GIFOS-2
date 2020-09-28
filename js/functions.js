@@ -85,7 +85,8 @@ function genenerateGifoButtons(selected) {
   buttons[0].addEventListener("click", () => {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
     favItem = new FAVGIFO(FavArray.length, selected.querySelector(".gifo_title").innerHTML, selected.querySelector(".gifo_user").innerHTML, selected.querySelector("img").src);
-
+    buttons[0].src = "assets/icon-fav-active.svg";
+    
   })
   
   //download
@@ -145,6 +146,7 @@ function maximizeGIFO(selected) {
   buttons[0].addEventListener("click", () => {
     console.log("Favoriteando GIFO: " + selected.querySelector(".gifo_title").innerHTML)
     favItem = new FAVGIFO(FavArray.length, username, title, url);
+    buttons[0].src = "assets/icon-fav-active.svg";
   })
   buttons[0].addEventListener("mouseover", () => {
     buttons[0].src = "assets/icon-fav-hover.svg";
