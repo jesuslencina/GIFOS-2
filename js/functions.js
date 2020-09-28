@@ -65,7 +65,7 @@ function generateGifoListeners(selected) {
     selected.querySelector(".gifoHover").classList.add("hidden");
   });
   //MEDIA QUERY (IF ON MOBILE, THE CLICK WILL MAXIMIZE GIFO)
-  if (window.matchMedia("(max-width: 800px)").matches) {
+  if (window.matchMedia("(max-width: 1000px)").matches) {
     selected.addEventListener("click", () => {
       maximizeGIFO(selected);
     });
@@ -126,7 +126,13 @@ function maximizeGIFO(selected) {
 MaxSection.querySelector(".closez").addEventListener("click", () => {
   MaxSection.classList.add("hidden");
   HeroSection.classList.remove("hidden");
-})
+});
+
+//*DOWNLOAD GIFO
+async function downloadGifo(url, title) {
+    let blob = await fetch(url).then(img => img.blob());
+    console.log(blob, title + ".gif");
+}
 //!-----------------------------------------
 //!TRENDING
 //!-----------------------------------------
@@ -196,100 +202,100 @@ function navSearch() {
   }
 }
 
-  function navSearchShow() {
-    NavSearch.classList.remove("hidden");
-    if (SearchBar.value != "") {
-      NavSearchBar.value = SearchBar.value; 
-    }
-    Nav.style.borderBottom = "1pt solid black";
+function navSearchShow() {
+  NavSearch.classList.remove("hidden");
+  if (SearchBar.value != "") {
+    NavSearchBar.value = SearchBar.value;
   }
-  //NAVBAR'S SEARCHBAR
-  window.addEventListener('scroll', navSearch);
+  Nav.style.borderBottom = "1pt solid black";
+}
+//NAVBAR'S SEARCHBAR
+window.addEventListener('scroll', navSearch);
 
-  //*SEARCH FOCUS
-  function searchActive() {
-    //HIDE TRENDING TAGS
-    document.querySelector(".hero_h3").classList.add("hidden");
-    document.querySelector(".hero_trending_tags").classList.add("hidden");
-    //HIDE & SHOW OTHER STUFF
-    SearchPurple.classList.add("hidden");
-    SearchClose.classList.remove("hidden");
-    SearchGray.classList.remove("hidden");
-    NavSearchPurple.classList.add("hidden");
-    NavSearchClose.classList.remove("hidden");
-    NavSearchGray.classList.remove("hidden");
+//*SEARCH FOCUS
+function searchActive() {
+  //HIDE TRENDING TAGS
+  document.querySelector(".hero_h3").classList.add("hidden");
+  document.querySelector(".hero_trending_tags").classList.add("hidden");
+  //HIDE & SHOW OTHER STUFF
+  SearchPurple.classList.add("hidden");
+  SearchClose.classList.remove("hidden");
+  SearchGray.classList.remove("hidden");
+  NavSearchPurple.classList.add("hidden");
+  NavSearchClose.classList.remove("hidden");
+  NavSearchGray.classList.remove("hidden");
+}
+
+function searchDisable() {
+  document.querySelector(".hero_h3").classList.remove("hidden");
+  document.querySelector(".hero_trending_tags").classList.remove("hidden");
+  SearchPurple.classList.remove("hidden");
+  SearchClose.classList.add("hidden");
+  SearchGray.classList.add("hidden");
+  NavSearchPurple.classList.remove("hidden");
+  NavSearchClose.classList.add("hidden");
+  NavSearchGray.classList.add("hidden");
+  SearchSection.classList.add("hidden");
+}
+
+//*CALL API
+function searchStart() {
+  if (SearchBar.value != "") {
+    //CLEAN
+    Iterations = 0;
+    offsetS = 0;
+    SearchSection.innerHTML = "";
+    SearchedGIFOS = [];
+    searchDisable();
+    //SHOW SEARCH SECTION
+    SearchSection.classList.remove("hidden");
+    //SUMMON API
+    search(SearchBar.value);
   }
+}
 
-  function searchDisable() {
-    document.querySelector(".hero_h3").classList.remove("hidden");
-    document.querySelector(".hero_trending_tags").classList.remove("hidden");
-    SearchPurple.classList.remove("hidden");
-    SearchClose.classList.add("hidden");
-    SearchGray.classList.add("hidden");
-    NavSearchPurple.classList.remove("hidden");
-    NavSearchClose.classList.add("hidden");
-    NavSearchGray.classList.add("hidden");
-    SearchSection.classList.add("hidden");
+//*GENERATE SEARCHED GIFOS
+function fillSearchedGifos(array) {
+  for (let i = 0; i < array.length; i++) {
+    let newgifo = new GIFO(
+      i + offsetS,
+      array[i].username,
+      array[i].title,
+      array[i].images.original.url
+    );
+    SearchedGIFOS.push(newgifo);
   }
+  renderSearchedGifos(SearchedGIFOS);
+}
 
-  //*CALL API
-  function searchStart() {
-    if (SearchBar.value != "") {
-      //CLEAN
-      Iterations = 0;
-      offsetS = 0;
-      SearchSection.innerHTML = "";
-      SearchedGIFOS = [];
-      searchDisable();
-      //SHOW SEARCH SECTION
-      SearchSection.classList.remove("hidden");
-      //SUMMON API
-      search(SearchBar.value);
-    }
+//*RENDER SEARCHED GIFOS
+function renderSearchedGifos(array) {
+  //ONLY IF IT'S THE 1ST TIME
+  if (offsetS == 0) {
+    //CLEAN
+    SearchSection.innerHTML = " ";
+    SearchedGIFOS = [];
+    //LINE
+    hr = document.createElement("hr");
+    SearchSection.appendChild(hr);
+    //H3
+    h3 = document.createElement("h3");
+    h3.innerHTML = SearchBar.value;
+    SearchSection.appendChild(h3);
   }
+  //IF NO RESULTS
 
-  //*GENERATE SEARCHED GIFOS
-  function fillSearchedGifos(array) {
-    for (let i = 0; i < array.length; i++) {
-      let newgifo = new GIFO(
-        i + offsetS,
-        array[i].username,
-        array[i].title,
-        array[i].images.original.url
-      );
-      SearchedGIFOS.push(newgifo);
-    }
-    renderSearchedGifos(SearchedGIFOS);
+  if (array.length == 0) {
+    ouch = document.createElement("div");
+    ouch.style = "display:flex; flex-flow: column;";
+    ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`;
+    SearchSection.appendChild(ouch);
   }
-
-  //*RENDER SEARCHED GIFOS
-  function renderSearchedGifos(array) {
-    //ONLY IF IT'S THE 1ST TIME
-    if (offsetS == 0) {
-      //CLEAN
-      SearchSection.innerHTML = " ";
-      SearchedGIFOS = [];
-      //LINE
-      hr = document.createElement("hr");
-      SearchSection.appendChild(hr);
-      //H3
-      h3 = document.createElement("h3");
-      h3.innerHTML = SearchBar.value;
-      SearchSection.appendChild(h3);
-    }
-    //IF NO RESULTS
-
-    if (array.length == 0) {
-      ouch = document.createElement("div");
-      ouch.style = "display:flex; flex-flow: column;";
-      ouch.innerHTML = `<img src="assets/icon-busqueda-sin-resultado.svg"> <h3 class="noresult">Intenta con otra búsqueda.</h3>`;
-      SearchSection.appendChild(ouch);
-    }
-    //RENDER
-    for (let i = 0; i < array.length; i++) {
-      div = document.createElement("div");
-      div.classList.add("gifo");
-      div.innerHTML = `<img src="${array[i].url}" alt="GIFO" class="GIFO TrendingGifo">
+  //RENDER
+  for (let i = 0; i < array.length; i++) {
+    div = document.createElement("div");
+    div.classList.add("gifo");
+    div.innerHTML = `<img src="${array[i].url}" alt="GIFO" class="GIFO TrendingGifo">
     <!--OVERLAY-->
     <div class="gifoHover hidden">
         <div class="gifo_buttonbar">
@@ -299,34 +305,34 @@ function navSearch() {
         </div>
         <p class="gifo_user">${array[i].author}</p>
         <p class="gifo_title">${array[i].title}</p>`;
-      SearchSection.appendChild(div);
-      generateGifoListeners(div);
-      genenerateGifoButtons(div);
-    }
-    Iterations++;
+    SearchSection.appendChild(div);
+    generateGifoListeners(div);
+    genenerateGifoButtons(div);
+  }
+  Iterations++;
 
-    //VIEW MORE
-    if (Iterations < 3) {
-      if (array.length > 11) {
-        createButton();
-      }
-    } else if (array.length - (offsetS - 12) > 11) {
+  //VIEW MORE
+  if (Iterations < 3) {
+    if (array.length > 11) {
       createButton();
     }
-
-    //CREATE ELEMENT
-    function createButton() {
-      let button = document.createElement("button");
-      button.classList.add("verMAS");
-      button.innerHTML = "VER MÁS";
-
-      //*ACTUAL ACTION
-      button.addEventListener("click", () => {
-        document.querySelector(".verMAS").remove();
-        offsetS = offsetS + 12;
-        search(SearchBar.value);
-      });
-      SearchSection.append(button);
-    }
+  } else if (array.length - (offsetS - 12) > 11) {
+    createButton();
   }
+
+  //CREATE ELEMENT
+  function createButton() {
+    let button = document.createElement("button");
+    button.classList.add("verMAS");
+    button.innerHTML = "VER MÁS";
+
+    //*ACTUAL ACTION
+    button.addEventListener("click", () => {
+      document.querySelector(".verMAS").remove();
+      offsetS = offsetS + 12;
+      search(SearchBar.value);
+    });
+    SearchSection.append(button);
+  }
+}
 

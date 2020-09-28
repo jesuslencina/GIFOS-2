@@ -167,7 +167,7 @@
 
     z-index: 8;
     background-color: $PurpleDimmed;
-    cursor: pointer;
+    cursor: grab;
     //BOTH AUTHOR AND TITLE
     p {
       position: absolute;
@@ -207,7 +207,7 @@
         margin-right: 0.2rem;
         margin-left: 0.2rem;
         &:hover {
-          cursor: grab;
+          cursor: pointer;
         }
       }
     }
