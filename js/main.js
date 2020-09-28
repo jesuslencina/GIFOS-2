@@ -139,6 +139,18 @@ TrendingRightArrow.addEventListener("click", () => {
   renderTrendingGifos(sliderOffset)
 });
 
+TrendingRightArrow.addEventListener("mouseover", ()  =>{
+  TrendingRightArrow.src = "assets/button-slider-right-hover.svg"
+});
+
+TrendingRightArrow.addEventListener("mouseout", ()  =>{
+  if(darkModeEnabled == false){
+    TrendingRightArrow.src = "assets/Button-Slider-right.svg"
+  }else{
+    TrendingRightArrow.src = "assets/button-slider-right-md-noct.svg";
+  }
+});
+
 TrendingLeftArrow.addEventListener("click", () => {
   if (sliderOffset > 0) {
     sliderOffset = sliderOffset - 3;
@@ -148,6 +160,58 @@ TrendingLeftArrow.addEventListener("click", () => {
   renderTrendingGifos(sliderOffset)
 });
 
+TrendingLeftArrow.addEventListener("mouseover", ()  =>{
+  TrendingLeftArrow.src = "assets/button-slider-left-hover.svg"
+});
+
+TrendingLeftArrow.addEventListener("mouseout", ()  =>{
+  if(darkModeEnabled == false){
+    TrendingLeftArrow.src = "assets/button-slider-left.svg"
+  }else{
+    TrendingLeftArrow.src = "assets/button-slider-left-md-noct.svg";
+  }
+});
+
+//*SOCIAL ICONS
+FacebookIcon.addEventListener("click", () => {
+  window.location.href ="https://www.facebook.com/";
+});
+FacebookIcon.addEventListener("mouseover", () => {
+  FacebookIcon.src = "assets/icon_facebook_hover.svg";
+});
+FacebookIcon.addEventListener("mouseout", () => {
+  if(darkModeEnabled == false){
+    FacebookIcon.src = "assets/icon_facebook.svg";
+  } else{
+    FacebookIcon.src = "assets/icon_facebook_noc.svg"
+  }
+});
+TwitterIcon.addEventListener("click", () => {
+  window.location.href ="https://twitter.com/home?lang=fr";
+});
+TwitterIcon.addEventListener("mouseover", () => {
+  TwitterIcon.src = "assets/icon-twitter-hover.svg";
+});
+TwitterIcon.addEventListener("mouseout", () => {
+  if(darkModeEnabled == false){
+    TwitterIcon.src = "assets/icon-twitter.svg";
+  } else{
+    TwitterIcon.src = "assets/icon_twitter_noc.svg"
+  }
+});
+InstagramIcon.addEventListener("click", () => {
+  window.location.href ="https://www.instagram.com/";
+});
+InstagramIcon.addEventListener("mouseover", () => {
+  InstagramIcon.src = "assets/icon_instagram-hover.svg";
+});
+InstagramIcon.addEventListener("mouseout", () => {
+  if(darkModeEnabled == false){
+    InstagramIcon.src = "assets/icon_instagram.svg";
+  } else{
+    InstagramIcon.src = "assets/icon_instagram_noc.svg"
+  }
+});
 //!-----------------------------------------
 //!GIFO OBJECTS
 //!-----------------------------------------

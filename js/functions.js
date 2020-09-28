@@ -121,6 +121,12 @@ function maximizeGIFO(selected) {
   HeroSection.classList.add("hidden");
   window.scrollTo(0, 0);
 }
+
+//*MIMIZE GIFO
+MaxSection.querySelector(".closez").addEventListener("click", () => {
+  MaxSection.classList.add("hidden");
+  HeroSection.classList.remove("hidden");
+})
 //!-----------------------------------------
 //!TRENDING
 //!-----------------------------------------
