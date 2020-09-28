@@ -1,8 +1,8 @@
 .createSection {
- display: flex;
- align-items: center;
- flex-direction: column;
-width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
   .level_1 {
     display: flex;
     margin: 0;
@@ -51,13 +51,72 @@ width: 100vw;
         }
       }
     }
+    video{
+        width:100%;
+        height: inherit;
+        
+    }
   }
-  .level_2{
-      width: 100vw;
-      height: fit-content;
-      display: flex;
+  .level_2 {
+    width: 15vw;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    p {
+      margin-top: 1rem;
+      font-family: $Roboto;
+      font-weight: $Medium;
+      font-size: 18px;
+      color: $Purple;
+      text-align: center;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-top: 0.6em;
+      padding-bottom: 0.6em;
+      border: 1pt solid $Purple;
+      border-radius: 30px;
+      body.dark & {
+        color: white;
+      }
 
-      justify-content: center;
+    }
+  }
+
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1em;
+    width: 60%;
+    height: 4pt;
+    background-color: $Purple;
+    border: none;
+  }
+
+  .start {
+    font-family: $Montserrat;
+    font-weight: $Bold;
+    font-size: 17px;
+    color: $Purple;
+    background-color: $White;
+    border: 1pt solid $Purple;
+    border-radius: 27px;
+    padding: 0.75rem;
+    transition: none;
+    margin-bottom: 1.65rem;
+    &:hover {
+      color: $White;
+      background-color: $Purple;
+      cursor: pointer;
+    }
+    body.dark & {
+      border-color: $SemiLightGray;
+      background-color: $Gray;
+      color: white;
+      &:hover {
+        color: rgba(255, 255, 255, 0.568);
+        background-color: gray;
+        cursor: pointer;
+      }
+    }
   }
   .camera_container {
     position: relative;
