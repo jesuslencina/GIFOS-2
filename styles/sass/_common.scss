@@ -99,6 +99,10 @@
   border-radius: 0 0 27px 27px;
   list-style: none;
   opacity: 60%;
+  body.darkMode & {
+    color: white;
+    border-color: gray;
+  }
   //list-style-image: url(../../assets/icon-search.svg);
   li{
     font-family: $Montserrat;
@@ -106,6 +110,7 @@
     p{
       display: inline;
       padding-left: 1rem;
+     
     }
     
     &:last-of-type{
@@ -245,7 +250,9 @@
   .search_container {
     width: 90%;
   }
-
+  .autocomplete{
+    width: 89%;
+  }
   .gifo {
     img {
       width: 15rem;

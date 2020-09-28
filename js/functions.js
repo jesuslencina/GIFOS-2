@@ -208,6 +208,7 @@ function fillSearchSuggestions(array) {
     li.innerHTML = `<img src="../../assets/icon-search.svg" class="suggestButton"></img><p>${array[i].title}</p>`;
     AutocompleteUL.appendChild(li);
     li.addEventListener("click", () => {
+      SearchBar.value = array[i].title;
       search(array[i].title);
       hideSearchSuggestions();
       searchDisable();
