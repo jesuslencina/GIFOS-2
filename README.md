@@ -18,7 +18,7 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 
 - Want to save a cool GIFO? Use the save feature! No need to register, your data will be stored on your browser! Access your saved GIFOS anytime in "Favoritos" (Available in the navigation bar or the burger menu)
 
-- Night-Friendly browsing: Too much light for the moment? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime. The site will remember your choice!
+- Night-Friendly browsing: Too much light? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime. The site will remember your choice!
 
 ## TODO:
 

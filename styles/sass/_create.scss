@@ -1,0 +1,123 @@
+.createSection {
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+width: 100vw;
+  .level_1 {
+    display: flex;
+    margin: 0;
+    margin-top: 9rem;
+    justify-content: center;
+    height: fit-content;
+    width: 100vw;
+    .create_window {
+      border: 2pt solid $Purple;
+      display: inline-block;
+      width: 60rem;
+      height: 34rem;
+      align-items: center;
+      justify-content: center;
+      div {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2 {
+          width: 50%;
+          font-family: $Montserrat;
+          font-weight: $Bold;
+          font-size: 35px;
+          text-align: center;
+          color: $Purple;
+          body.dark & {
+            color: white;
+          }
+
+          span {
+            color: $Cyan;
+          }
+        }
+
+        p {
+          margin-top: 2rem;
+          font-family: $Roboto;
+          font-size: 16px;
+          text-align: center;
+          line-height: 29px;
+          body.dark & {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .level_2{
+      width: 100vw;
+      height: fit-content;
+      display: flex;
+
+      justify-content: center;
+  }
+  .camera_container {
+    position: relative;
+    width: 16rem;
+    height: 16rem;
+    margin-left: 3rem;
+    .camera,
+    .tape1,
+    .tape2,
+    .light {
+      position: absolute;
+    }
+    .camera {
+      bottom: 0;
+      z-index: 1;
+    }
+    .light {
+      animation: shakyLight 1500ms infinite linear;
+      bottom: 3.5rem;
+      right: 0;
+    }
+    .tape1 {
+      left: 0.2rem;
+      top: 2rem;
+      z-index: 2;
+      animation: spin 10000ms infinite linear;
+    }
+    .tape2 {
+      left: 4.5rem;
+      top: 0.6rem;
+      z-index: 2;
+      animation: spin 10500ms infinite linear;
+      animation-direction: reverse;
+    }
+  }
+  .dummy {
+    width: 19rem;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shakyLight {
+  25% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 20%;
+  }
+  75% {
+    opacity: 80%;
+  }
+  100% {
+    opacity: 50%;
+  }
+}

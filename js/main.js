@@ -47,6 +47,7 @@ const FavSection = document.querySelector(".favs")
 //*SEARCH RESULTS
 const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION
+const TrendingGifosSection = document.querySelector(".trending_gifos");
 const TrendingGifosContainer = document.querySelector(".trending_gifos_gifos_container");
 const TrendingRightArrow = document.getElementById("right_arrow");
 const TrendingLeftArrow = document.getElementById("left_arrow");
@@ -102,6 +103,8 @@ ButtonFavs.addEventListener("click", () => {
   HeroSection.classList.add("hidden")
   FavSection.classList.remove("hidden")
   MaxSection.classList.add("hidden");
+  CreateSection.classList.add("hidden");
+  TrendingGifosSection.classList.remove("hidden");
   if (burgerOpen == true) {
     NavUL.style.display = "none";
     burgerOpen = false;

@@ -51,6 +51,7 @@ function renderFavGifos() {
         MaxSection.classList.add("hidden");
         HeroSection.classList.remove("hidden");
         FavSection.classList.add("hidden");
+        
     });
     if (FavArray.length == 0) {
         div = document.createElement("div");

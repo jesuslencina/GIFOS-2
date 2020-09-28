@@ -35,7 +35,7 @@
 
                 <li class="nav_container_items_item" id="BtnFavs"><a href="#">FAVORITOS</a></li>
 
-                <li class="nav_container_items_item"><a href="">MIS GIFOS</a></li>
+                <li class="nav_container_items_item" id="BtnMyGifos"><a href="#">MIS GIFOS</a></li>
             </ul>
             <!--*BURGER MENU-->
             <img src="assets/burger.svg" alt="Menú hamurguesa" class="nav_container_burger">
@@ -49,6 +49,29 @@
             </div>
         </div>
     </nav>
+
+    <section class="createSection hidden">
+        <div class="level_1">
+            <div class="camera_container">
+                <img src="assets/element_cinta1.svg" class="tape1" alt="Cinta">
+                <img src="assets/element_cinta2.svg" class="tape2" alt="Cinta">
+                <img src="assets/element-camara.svg" class="camera" alt="Cámara">
+                <img src="assets/element-luz-camara.svg" class="light" alt="Luz">
+            </div>
+            <div class="create_window">
+                <div>
+                    <h2>Aquí podrás crear tus propios <span>GIFOS</span></h2>
+                    <p>Crea tu GIFO en sólo 3 pasos!<br>(sólo necesitas una cámara para grabar un video)</p>
+                </div>
+            </div>
+            <div class="dummy"></div>
+        </div>
+        <div class="level_2">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+    </section>
     <!--//HERO-->
     <section class="hero">
         <!--*HEADER-->
@@ -63,8 +86,8 @@
             <!--SEARCHBAR-->
             <input type="text" placeholder="Busca GIFOS y más" class="searchbar">
         </div>
-         <!--AUTOCOMPLETE-->
-         <ul class="autocomplete hidden">
+        <!--AUTOCOMPLETE-->
+        <ul class="autocomplete hidden">
             <li>Placeholder</li>
             <li>Placeholder</li>
             <li>Placeholder</li>
@@ -80,7 +103,7 @@
     <!--//MAXIMIZED SECTION-->
     <section class="max hidden">
         <div class="close-container">
-        <img src="assets/close.svg" alt="Cerrar" class="closez">
+            <img src="assets/close.svg" alt="Cerrar" class="closez">
         </div>
         <img src="https://via.placeholder.com/150" alt="GIFO PLACEHOLDER" class="gifo">
         <div class="bottomz">
@@ -94,11 +117,11 @@
             </div>
         </div>
     </section>
-     <!--//FAVORITES SECTION-->
-     <section class="favs hidden">
-        <img src="assets/icon-favoritos.svg" alt="Favoritos"> 
+    <!--//FAVORITES SECTION-->
+    <section class="favs hidden">
+        <img src="assets/icon-favoritos.svg" alt="Favoritos">
         <h4>Favoritos</h4>
-     </section>
+    </section>
     <!--//SEARCH RESULTS-->
     <section class="search_results hidden">
         <h3 class="hidden">Placeholder</h3>
@@ -144,6 +167,7 @@
     <script src="js/main.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/favs.js"></script>
+    <script src="js/create.js"></script>
 </body>
 
 </html>
