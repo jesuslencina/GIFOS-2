@@ -6,7 +6,7 @@ function enableDarkMode() {
   if (darkModeEnabled == false) {
     console.log("Cambiando a modo nocturno");
     ButtonDarkMode.innerHTML = `<a href="#">MODO DIURNO</a>`;
-    document.body.classList.add("darkMode");
+    document.body.classList.add("dark");
     darkModeEnabled = true;
     //REPLACE SOURCES
     logo.src = "assets/Logo-modo-noc.svg";
@@ -23,7 +23,7 @@ function enableDarkMode() {
   } else {
     console.log("Cambiando a modo diurno");
     ButtonDarkMode.innerHTML = `<a href="#">MODO NOCTURNO</a>`;
-    document.body.classList.remove("darkMode");
+    document.body.classList.remove("dark");
     darkModeEnabled = false;
     //REPLACE SOURCES
     logo.src = "assets/logo-desktop.svg";

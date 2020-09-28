@@ -12,8 +12,8 @@
   border-top: 4pt solid $Purple;
   background-color: $White;
 
-  //!DARKMODE
-  body.darkMode & {
+  //!dark
+  body.dark & {
     border-top-color: black;
     background-color: $Gray;
   }
@@ -54,8 +54,8 @@
           color: $Purple;
           font-size: 13px;
 
-          //!DARKMODE
-          body.darkMode & {
+          //!dark
+          body.dark & {
             color: $White;
           }
 
@@ -132,8 +132,8 @@
         background-color: $Purple;
         opacity: 90%;
 
-        //!DARKMODE
-        body.darkMode & {
+        //!dark
+        body.dark & {
           background-color: black;
           opacity: 100%;
         }

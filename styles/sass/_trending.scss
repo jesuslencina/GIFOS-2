@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   //!DARK MODE
-  body.darkMode & {
+  body.dark & {
     background-color:$DarkGray;
   }
   //HEADER
@@ -18,7 +18,7 @@
     font-size: 25px;
     color: $Purple;
     //!DARK MODE
-    body.darkMode & {
+    body.dark & {
       color: white;
     }
   }
@@ -29,7 +29,7 @@
     font-size: 18px;
     margin-top: 0.75rem;
     //!DARK MODE
-    body.darkMode & {
+    body.dark & {
       color: white;
     }
   }

@@ -9,7 +9,7 @@ body {
   background-color: white;
 }
 
-body.darkMode {
+body.dark {
   background-color: #37383C;
 }
 
@@ -123,7 +123,7 @@ body h1, body h2, body h3, body h4, body h5, body h6, body p, body span, body a 
   padding-left: 3.38rem;
 }
 
-body.darkMode .search_container .searchbar {
+body.dark .search_container .searchbar {
   border-color: #9CAFC3;
   background-color: #37383C;
 }
@@ -174,7 +174,7 @@ body.darkMode .search_container .searchbar {
   opacity: 60%;
 }
 
-body.darkMode .autocomplete {
+body.dark .autocomplete {
   color: white;
   border-color: gray;
 }
@@ -220,7 +220,7 @@ body.darkMode .autocomplete {
   padding-left: 3.38rem;
 }
 
-body.darkMode .nav_search_container .NAVsearchbar {
+body.dark .nav_search_container .NAVsearchbar {
   border-color: #9CAFC3;
   background-color: #37383C;
 }
@@ -366,7 +366,7 @@ body.darkMode .nav_search_container .NAVsearchbar {
   background-color: white;
 }
 
-body.darkMode .nav {
+body.dark .nav {
   border-top-color: black;
   background-color: #37383C;
 }
@@ -417,7 +417,7 @@ body.darkMode .nav {
   font-size: 13px;
 }
 
-body.darkMode .nav_container_items_item a {
+body.dark .nav_container_items_item a {
   color: white;
 }
 
@@ -493,7 +493,7 @@ body.darkMode .nav_container_items_item a {
     background-color: #572EE5;
     opacity: 90%;
   }
-  body.darkMode .nav_container_items {
+  body.dark .nav_container_items {
     background-color: black;
     opacity: 100%;
   }
@@ -548,7 +548,7 @@ body.darkMode .nav_container_items_item a {
   color: #5ED7C6;
 }
 
-body.darkMode .hero_h1 {
+body.dark .hero_h1 {
   color: white;
 }
 
@@ -565,7 +565,7 @@ body.darkMode .hero_h1 {
   margin-top: 6rem;
 }
 
-body.darkMode .hero_h3 {
+body.dark .hero_h3 {
   color: white;
 }
 
@@ -578,7 +578,7 @@ body.darkMode .hero_h3 {
   margin-top: 0.5rem;
 }
 
-body.darkMode .hero_trending_tags {
+body.dark .hero_trending_tags {
   color: white;
 }
 
@@ -599,7 +599,7 @@ body.darkMode .hero_trending_tags {
   border-bottom: 1pt solid #572EE5;
 }
 
-body.darkMode .hero_trending_tags span:hover {
+body.dark .hero_trending_tags span:hover {
   border-bottom-color: white;
 }
 
@@ -662,7 +662,7 @@ body.darkMode .hero_trending_tags span:hover {
   text-transform: capitalize;
 }
 
-body.darkMode .search_results h3 {
+body.dark .search_results h3 {
   color: white;
 }
 
@@ -706,13 +706,13 @@ body.darkMode .search_results h3 {
   cursor: pointer;
 }
 
-body.darkMode .verMAS {
+body.dark .verMAS {
   border-color: #9CAFC3;
   background-color: #37383C;
   color: white;
 }
 
-body.darkMode .verMAS:hover {
+body.dark .verMAS:hover {
   color: rgba(255, 255, 255, 0.568);
   background-color: gray;
   cursor: pointer;
@@ -768,7 +768,7 @@ body.darkMode .verMAS:hover {
           align-items: center;
 }
 
-body.darkMode .trending_gifos {
+body.dark .trending_gifos {
   background-color: #222326;
 }
 
@@ -779,7 +779,7 @@ body.darkMode .trending_gifos {
   color: #572EE5;
 }
 
-body.darkMode .trending_gifos_h2 {
+body.dark .trending_gifos_h2 {
   color: white;
 }
 
@@ -790,7 +790,7 @@ body.darkMode .trending_gifos_h2 {
   margin-top: 0.75rem;
 }
 
-body.darkMode .trending_gifos_p {
+body.dark .trending_gifos_p {
   color: white;
 }
 
@@ -878,7 +878,7 @@ body.darkMode .trending_gifos_p {
   border-bottom: 4pt solid #572EE5;
 }
 
-body.darkMode .footer {
+body.dark .footer {
   border-bottom-color: black;
 }
 
@@ -898,7 +898,7 @@ body.darkMode .footer {
   font-size: 13px;
 }
 
-body.darkMode .footer_share p {
+body.dark .footer_share p {
   color: white;
 }
 
@@ -928,7 +928,7 @@ body.darkMode .footer_share p {
   font-size: 13px;
 }
 
-body.darkMode .footer_copyright {
+body.dark .footer_copyright {
   color: white;
 }
 
@@ -1022,7 +1022,7 @@ body.darkMode .footer_copyright {
   cursor: pointer;
 }
 
-body.darkMode .max .close-container .closez {
+body.dark .max .close-container .closez {
   border-color: white;
 }
 
@@ -1053,7 +1053,7 @@ body.darkMode .max .close-container .closez {
   justify-self: left;
 }
 
-body.darkMode .max .bottomz .dataz {
+body.dark .max .bottomz .dataz {
   color: white;
 }
 
@@ -1124,7 +1124,7 @@ body.darkMode .max .bottomz .dataz {
   display: block;
 }
 
-body.darkMode .favs h4 {
+body.dark .favs h4 {
   color: white;
 }
 

@@ -21,7 +21,7 @@
         cursor: pointer;
       }
       //!DARK MODE
-      body.darkMode & {
+      body.dark & {
         border-color: white;
       }
     }
@@ -40,7 +40,7 @@
       flex-direction: column;
       justify-self: left;
       //!DARK MODE
-      body.darkMode & {
+      body.dark & {
         color: white;
       }
       .username {

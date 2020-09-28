@@ -52,7 +52,7 @@
     padding: 0.75rem;
     padding-left: 3.38rem;
 
-    body.darkMode & {
+    body.dark & {
       border-color: $SemiLightGray;
       background-color: $Gray;
     }
@@ -99,7 +99,7 @@
   border-radius: 0 0 27px 27px;
   list-style: none;
   opacity: 60%;
-  body.darkMode & {
+  body.dark & {
     color: white;
     border-color: gray;
   }
@@ -141,7 +141,7 @@
     border-radius: 27px;
     padding: 0.75rem;
     padding-left: 3.38rem;
-    body.darkMode & {
+    body.dark & {
       border-color: $SemiLightGray;
       background-color: $Gray;
     }

@@ -15,7 +15,7 @@
       color: $Cyan;
     }
     //!DARK MODE
-    body.darkMode & {
+    body.dark & {
       color: white;
     }
   }
@@ -31,7 +31,7 @@
     text-align: center;
     margin-top: 6rem;
     //!DARK MODE
-    body.darkMode & {
+    body.dark & {
       color: white;
     }
   }
@@ -44,7 +44,7 @@
     text-align: center;
     margin-top: 0.5rem;
     //!DARK MODE
-    body.darkMode & {
+    body.dark & {
       color: white;
     }
     span {
@@ -59,7 +59,7 @@
         filter: brightness(2);
         border-bottom: 1pt solid $Purple;
         //!DARK MODE
-        body.darkMode & {
+        body.dark & {
           border-bottom-color: white;
         }
       }

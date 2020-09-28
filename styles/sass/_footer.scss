@@ -5,7 +5,7 @@
   align-items: center;
   border-bottom: 4pt solid $Purple;
   //!DARK MODE
-  body.darkMode & {
+  body.dark & {
     border-bottom-color: black;
   }
 
@@ -21,7 +21,7 @@
       font-weight: $Regular;
       font-size: 13px;
       //!DARK MODE
-      body.darkMode & {
+      body.dark & {
         color: white;
       }
     }
@@ -48,7 +48,7 @@
     font-weight: $Regular;
     font-size: 13px;
     //!DARK MODE
-    body.darkMode & {
+    body.dark & {
       color: white;
     }
   }
