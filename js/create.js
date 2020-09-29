@@ -96,7 +96,7 @@ async function getStreamAndRecord() {
                                         localStorage.setItem("MYGIFOS", JSON.stringify(MyGifosArray));
                                     })
                                 overlay.querySelector("img").src = "assets/ok.svg";
-                                overlay.querySelector("p").innerHTML = "GIFO subido con éxito";
+                                overlay.querySelector("p").innerHTML = "GIFO subido con éxito. Si quieres subir otro GIFO, recarga la página";
                                 setTimeout(() => {
                                     takeUserToMyGifos();
                                 }, 2500);
