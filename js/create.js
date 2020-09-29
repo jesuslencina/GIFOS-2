@@ -58,11 +58,16 @@ async function getStreamAndRecord() {
                     recorder.stopRecording()
                     let form = new FormData();
                     form.append('file', recorder.getBlob(), 'myGifo.gif');
+                    form.append('api_key', apiKey)
                     console.log(form.get('file'))
-                    fetch("upload.giphy.com/v1/gifs",{
+                    fetch("https://upload.giphy.com/v1/gifs",{
                         method: 'POST',
                         body: form,
                     })
+                    .then(response => {
+                        return response.json();
+                    })
+
                 },{ once: true })
             },{ once: true });
             video.srcObject = stream;
