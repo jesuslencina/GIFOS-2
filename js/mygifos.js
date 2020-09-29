@@ -25,7 +25,7 @@ function MYGIFO(index, author, title, url) {
     this.url = url;
 
     console.log(this)
-    favSelected(this);
+    
     return this;
 
 }
