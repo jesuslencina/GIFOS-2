@@ -1241,6 +1241,7 @@ body.dark .volver:hover {
 }
 
 .createSection .level_1 .create_window {
+  position: relative;
   border: 2pt solid #572EE5;
   display: inline-block;
   width: 60rem;
@@ -1253,7 +1254,7 @@ body.dark .volver:hover {
           justify-content: center;
 }
 
-.createSection .level_1 .create_window div {
+.createSection .level_1 .create_window .text_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1270,7 +1271,7 @@ body.dark .volver:hover {
           align-items: center;
 }
 
-.createSection .level_1 .create_window div h2 {
+.createSection .level_1 .create_window .text_container h2 {
   width: 50%;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -1279,15 +1280,15 @@ body.dark .volver:hover {
   color: #572EE5;
 }
 
-body.dark .createSection .level_1 .create_window div h2 {
+body.dark .createSection .level_1 .create_window .text_container h2 {
   color: white;
 }
 
-.createSection .level_1 .create_window div h2 span {
+.createSection .level_1 .create_window .text_container h2 span {
   color: #5ED7C6;
 }
 
-.createSection .level_1 .create_window div p {
+.createSection .level_1 .create_window .text_container p {
   margin-top: 2rem;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -1295,8 +1296,36 @@ body.dark .createSection .level_1 .create_window div h2 {
   line-height: 29px;
 }
 
-body.dark .createSection .level_1 .create_window div p {
+body.dark .createSection .level_1 .create_window .text_container p {
   color: white;
+}
+
+.createSection .level_1 .create_window .create_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #562ee5b2;
+  width: 100%;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.createSection .level_1 .create_window .create_overlay p {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
 }
 
 .createSection .level_1 video {

@@ -37,6 +37,10 @@ function executeStep1() {
 
 //*STEP 2 (When OK is clicked)
 async function getStreamAndRecord() {
+    document.querySelector(".createSection .level_2 .p1").style.backgroundColor = "white";
+    document.querySelector(".createSection .level_2 .p1").style.color = "#572EE5";
+    document.querySelector(".createSection .level_2 .p2").style.backgroundColor = "#572EE5";
+    document.querySelector(".createSection .level_2 .p2").style.color = "white";
     var video = document.createElement("video");
     await navigator.mediaDevices.getUserMedia({
         audio: false,
@@ -55,19 +59,43 @@ async function getStreamAndRecord() {
                 BtnStart.innerHTML ="FINALIZAR";
                 BtnStart.addEventListener("click",()=>{
                     //*STEP 5 (When FINALIZAR is clicked)
+                    document.querySelector(".createSection .level_2 .p2").style.backgroundColor = "white";
+                    document.querySelector(".createSection .level_2 .p2").style.color = "#572EE5";
+                    document.querySelector(".createSection .level_2 .p3").style.backgroundColor = "#572EE5";
+                    document.querySelector(".createSection .level_2 .p3").style.color = "white";
+                    //!CREATE OVERLAY
+                    overlay = document.createElement("div");
+                    overlay.classList.add("create_overlay");
+                    overlay.innerHTML = `<img src="assets/loader.svg" alt="Cargando"><p>Estamos subiendo tu GIFO</p>`
+                    document.querySelector(".create_window").append(overlay)
+                    //!
                     recorder.stopRecording()
                     let form = new FormData();
                     form.append('file', recorder.getBlob(), 'myGifo.gif');
                     form.append('api_key', apiKey)
                     console.log(form.get('file'))
-                    fetch("https://upload.giphy.com/v1/gifs",{
+                    ////
+                    async function uploadFetch() {
+                       await fetch("https://upload.giphy.com/v1/gifs",{
                         method: 'POST',
                         body: form,
                     })
                     .then(response => {
                         return response.json();
                     })
-
+                    .then(result => {
+                       newGifoID = result.data.id;
+                       overlay.querySelector("img").src = "assets/ok.svg";
+                       overlay.querySelector("p").innerHTML = "GIFO subido con éxito"
+                       //TODO: Array push
+                       setTimeout(() => {
+                           takeUserToMyGifos();
+                       }, 3000);  
+                    })
+                    }
+                    ////
+                    uploadFetch();
+                       
                 },{ once: true })
             },{ once: true });
             video.srcObject = stream;

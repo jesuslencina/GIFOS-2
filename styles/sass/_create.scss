@@ -11,13 +11,14 @@
     height: fit-content;
     width: 100vw;
     .create_window {
+      position: relative;
       border: 2pt solid $Purple;
       display: inline-block;
       width: 60rem;
       height: 34rem;
       align-items: center;
       justify-content: center;
-      div {
+      .text_container {
         display: flex;
         height: 100%;
         flex-direction: column;
@@ -50,11 +51,29 @@
           }
         }
       }
+
+      .create_overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $PurpleDimmed;
+        width: 100%;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p{
+          color: $White;
+          font-family: $Montserrat;
+          font-weight: $Bold;
+        }
+      }
+
     }
     video{
         width:100%;
         height: inherit;
-        
     }
   }
   .level_2 {
@@ -118,6 +137,9 @@
       }
     }
   }
+
+  
+
   .camera_container {
     position: relative;
     width: 16rem;
