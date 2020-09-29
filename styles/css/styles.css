@@ -1505,6 +1505,121 @@ body.dark .createSection .start:hover {
   }
 }
 
+.mygifos {
+  margin-top: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mygifos h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  color: #572EE5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+}
+
+body.dark .mygifos h4 {
+  color: white;
+}
+
+.mygifos .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mygifos .container .gifo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.75em;
+}
+
+.mygifos .container .gifo .gifoHover {
+  top: 0.8em;
+  left: 0.75em;
+}
+
+.mygifos .noresult {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #5ED7C6;
+  font-size: 22px;
+  text-transform: none;
+  margin-top: 2.5rem;
+  width: 70%;
+  text-align: center;
+}
+
+.volver {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #572EE5;
+  background-color: white;
+  border: 1pt solid #572EE5;
+  border-radius: 27px;
+  padding: 0.75rem;
+  -webkit-transition: none;
+  transition: none;
+  margin-top: 2rem;
+  margin-bottom: 1.65rem;
+}
+
+.volver:hover {
+  color: white;
+  background-color: #572EE5;
+  cursor: pointer;
+}
+
+body.dark .volver {
+  border-color: #9CAFC3;
+  background-color: #37383C;
+  color: white;
+}
+
+body.dark .volver:hover {
+  color: rgba(255, 255, 255, 0.568);
+  background-color: gray;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100vw;
+  }
+  .container .noresult {
+    font-size: 18px;
+  }
+  .container .gifo img {
+    width: 9rem;
+    height: 6.5rem;
+  }
+}
+
 .hidden {
   display: none;
 }

@@ -31,6 +31,8 @@ const NavULitems = document.querySelectorAll(".nav_container_items li");
 const ButtonDarkMode = document.getElementById("BtnDarkMode");
 //FAVS
 const ButtonFavs = document.getElementById("BtnFavs");
+//MY GIFOS
+const ButtonMyGifos = document.getElementById("BtnMyGifos");
 //*HERO
 const HeroSection = document.querySelector(".hero");
 const TrendingTags = document.querySelector(".hero_trending_tags");
@@ -43,7 +45,9 @@ const AutocompleteUL = document.querySelector(".autocomplete");
 //*MAX SECTION
 const MaxSection = document.querySelector(".max");
 //*FAV SECTION
-const FavSection = document.querySelector(".favs")
+const FavSection = document.querySelector(".favs");
+//*MY GIFOS SECTION
+const MyGifosSection = document.querySelector(".mygifos");
 //*SEARCH RESULTS
 const SearchSection = document.querySelector(".search_results");
 //*TRENDING GIFOS SECTION

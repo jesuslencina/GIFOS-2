@@ -14,7 +14,7 @@ CreateButton.addEventListener("click", () => {
 
 //*START BUTTON
 const BtnStart = document.querySelector(".start");
-BtnStart.addEventListener("click", executeStep1,{ once: true });
+BtnStart.addEventListener("click", executeStep1, { once: true });
 //*SECTION
 const CreateSection = document.querySelector(".createSection");
 
@@ -30,7 +30,7 @@ function executeStep1() {
 
     BtnStart.addEventListener("click", () => {
         getStreamAndRecord()
-    },{ once: true });
+    }, { once: true });
 }
 
 
@@ -56,8 +56,8 @@ async function getStreamAndRecord() {
             BtnStart.addEventListener("click", () => {
                 //*STEP 4 (When GRABAR is clicked)
                 recorder.startRecording();
-                BtnStart.innerHTML ="FINALIZAR";
-                BtnStart.addEventListener("click",()=>{
+                BtnStart.innerHTML = "FINALIZAR";
+                BtnStart.addEventListener("click", () => {
                     //*STEP 5 (When FINALIZAR is clicked)
                     document.querySelector(".createSection .level_2 .p2").style.backgroundColor = "white";
                     document.querySelector(".createSection .level_2 .p2").style.color = "#572EE5";
@@ -76,28 +76,37 @@ async function getStreamAndRecord() {
                     console.log(form.get('file'))
                     ////
                     async function uploadFetch() {
-                       await fetch("https://upload.giphy.com/v1/gifs",{
-                        method: 'POST',
-                        body: form,
-                    })
-                    .then(response => {
-                        return response.json();
-                    })
-                    .then(result => {
-                       newGifoID = result.data.id;
-                       overlay.querySelector("img").src = "assets/ok.svg";
-                       overlay.querySelector("p").innerHTML = "GIFO subido con éxito"
-                       //TODO: Array push
-                       setTimeout(() => {
-                           takeUserToMyGifos();
-                       }, 3000);  
-                    })
+                        await fetch("https://upload.giphy.com/v1/gifs", {
+                            method: 'POST',
+                            body: form,
+                        })
+                            .then(response => {
+                                return response.json();
+                            })
+                            .then(result => {
+                                console.log("RESULT")
+                                console.log(result)
+                                fetch(`https://api.giphy.com/v1/gifs?ids=${result.data.id}&api_key=${apiKey}`)
+                                    .then(response => response.json())
+                                    .then(gifow => {
+                                        let newmygifo = new MYGIFO(MyGifosArray.length, "Tú", "Sin título", gifow.data[0].images.original.url)
+                                        console.log("GIFOW")
+                                        console.log(newmygifo)
+                                        MyGifosArray.push(newmygifo);
+                                        localStorage.setItem("MYGIFOS", JSON.stringify(MyGifosArray));
+                                    })
+                                overlay.querySelector("img").src = "assets/ok.svg";
+                                overlay.querySelector("p").innerHTML = "GIFO subido con éxito";
+                                setTimeout(() => {
+                                    takeUserToMyGifos();
+                                }, 2500);
+                            })
                     }
                     ////
                     uploadFetch();
-                       
-                },{ once: true })
-            },{ once: true });
+
+                }, { once: true })
+            }, { once: true });
             video.srcObject = stream;
             video.play();
 

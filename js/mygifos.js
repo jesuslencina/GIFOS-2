@@ -1,23 +1,14 @@
-//*ARRAY
-var FavArray = [];
-//*RETRIEVE FROM LOCALSTORAGE
-function retrieveFavs() {
-    if (localStorage.hasOwnProperty("FAVGIFOS")) {
-        FavArray = JSON.parse(localStorage.getItem("FAVGIFOS"))
-    } 
+//!LOCALSTORAGE JOB
+var MyGifosArray = [];
+function retrieveMyGifos() {
+    if (localStorage.hasOwnProperty("MYGIFOS")) {
+        MyGifosArray = JSON.parse(localStorage.getItem("MYGIFOS"))
+    }
 }
+retrieveMyGifos();
 
-retrieveFavs();
-
-//*FAV A GIFO
-function favSelected(item) {
-    FavArray.push(item);
-    localStorage.setItem("FAVGIFOS", JSON.stringify(FavArray));
-    renderFavGifos();
-}
-
-//*CONSTRUCT FAV GIFOS
-function FAVGIFO(index, author, title, url) {
+//!CONSTRUCT MY GIFOS
+function MYGIFO(index, author, title, url) {
     this.index = index;
     this.author = author;
 
@@ -39,33 +30,42 @@ function FAVGIFO(index, author, title, url) {
 
 }
 
+//!LISTENERS
+ButtonMyGifos.addEventListener("click", takeUserToMyGifos);
+//!FUNCTIONS
+function takeUserToMyGifos() {
+    MyGifosSection.classList.remove("hidden");
+    FavSection.classList.add("hidden");
+    CreateSection.classList.add("hidden");
+    HeroSection.classList.add("hidden");
+    MaxSection.classList.add("hidden");
+    SearchSection.classList.add("hidden");
+}
 
-//*RENDER GIFOS
-function renderFavGifos() {
-    FavSection.innerHTML = `<img src="assets/icon-favoritos.svg" alt="Favoritos"> 
-    <h4>Favoritos</h4>
+//!RENDER MY GIFOS
+function renderMyGifos() {
+    MyGifosSection.innerHTML = `<img src="assets/icon-mis-gifos.svg" alt="Mis GIFOS"> 
+    <h4>Mis GIFOS</h4>
     <button class="volver">VOLVER</button>`;
     document.querySelector(".volver").addEventListener("click", () => {
         MaxSection.classList.add("hidden");
         HeroSection.classList.remove("hidden");
-        FavSection.classList.add("hidden");
-        
+        MyGifosSection.classList.add("hidden");
     });
-    if (FavArray.length == 0) {
+    if (MyGifosArray.length == 0) {
         div = document.createElement("div");
         div.style = "display:flex; flex-direction: column; align-items: center; margin-top: 4rem"
-        div.innerHTML = `<img src="assets/icon-fav-sin-contenido.svg" alt="Sin gifos">
-    <p class="noresult">¡Guarda tu primer GIFO en Favoritos 
-    para que se muestre aquí!</p>`;
-        FavSection.appendChild(div);
+        div.innerHTML = `<img src="assets/icon-mis-gifos-sin-contenido.svg" alt="Sin gifos">
+    <p class="noresult">¡Anímate a crear tu primer GIFO!</p>`;
+        MyGifosSection.appendChild(div);
     } else {
         let container = document.createElement("div");
         container.classList.add("container");
-        FavSection.appendChild(container);
-        for (let i = 0; i < FavArray.length; i++) {
-            let gifoo = document.createElement("div")
-            gifoo.classList.add("gifo");
-            gifoo.innerHTML = `<img src="${FavArray[i].url}" alt="${FavArray[i].title}">
+        MyGifosSection.appendChild(container);
+        for (let i = 1; i < MyGifosArray.length; i++) {
+            let gifou = document.createElement("div")
+            gifou.classList.add("gifo");
+            gifou.innerHTML = `<img src="${MyGifosArray[i].url}" alt="${MyGifosArray[i].title}">
         <!--OVERLAY-->
         <div class="gifoHover hidden">
             <div class="gifo_buttonbar">
@@ -73,42 +73,42 @@ function renderFavGifos() {
                 <img src="assets/icon-download.svg" class="download" alt="Botón descargar">
                 <img src="assets/icon-max-normal.svg" class="maximize" alt="Botón maximizar">
             </div>
-            <p class="gifo_user">${FavArray[i].author}</p>
-            <p class="gifo_title">${FavArray[i].title}</p>
+            <p class="gifo_user">${MyGifosArray[i].author}</p>
+            <p class="gifo_title">${MyGifosArray[i].title}</p>
         </div>`;
-            container.appendChild(gifoo);
+            container.appendChild(gifou);
             //HOVER
-            gifoo.addEventListener("mouseover", () => {
-                gifoo.querySelector(".gifoHover").classList.remove("hidden");
+            gifou.addEventListener("mouseover", () => {
+                gifou.querySelector(".gifoHover").classList.remove("hidden");
             });
-            gifoo.addEventListener("mouseout", () => {
-                gifoo.querySelector(".gifoHover").classList.add("hidden");
+            gifou.addEventListener("mouseout", () => {
+                gifou.querySelector(".gifoHover").classList.add("hidden");
             });
-            let buttons = gifoo.querySelectorAll(".gifo_buttonbar img");
+            let buttons = gifou.querySelectorAll(".gifo_buttonbar img");
             //MEDIA QUERY (IF ON MOBILE, THE CLICK WILL MAXIMIZE GIFO)
             if (window.matchMedia("(max-width: 1000px)").matches) {
-                gifoo.addEventListener("click", () => {
-                    maximizeGIFO(gifoo);
+                gifou.addEventListener("click", () => {
+                    maximizeGIFO(gifou);
                 });
-            }
+            } 
             ////BUTTONS
             //!CLICK LISTENERS
-            //fav
+            //remove
             buttons[0].addEventListener("click", () => {
-                console.log("Borrando GIFO: " + gifoo.querySelector(".gifo_title").innerHTML)
-                FavArray.splice(i, 1);
-                localStorage.setItem("FAVGIFOS", JSON.stringify(FavArray));
-                renderFavGifos();
+                console.log("Borrando GIFO: " + gifou.querySelector(".gifo_title").innerHTML)
+                MyGifos.splice(i, 1);
+                localStorage.setItem("MYGIFOS", JSON.stringify(MyGifosArray));
+                renderMyGifos();
             })
 
             //download
             buttons[1].addEventListener("click", () => {
-                downloadGifo(FavArray[i].url, FavArray[i].title);
+                downloadGifo(MyGifosArray[i].url,MyGifosArray[i].title);
             });
 
             //maximize
             buttons[2].addEventListener("click", () => {
-                maximizeGIFO(gifoo);
+                maximizeGIFO(gifou);
             });
 
 
@@ -138,4 +138,4 @@ function renderFavGifos() {
         }
     }
 }
-renderFavGifos();
+renderMyGifos();
