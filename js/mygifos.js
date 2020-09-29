@@ -40,6 +40,7 @@ function takeUserToMyGifos() {
     HeroSection.classList.add("hidden");
     MaxSection.classList.add("hidden");
     SearchSection.classList.add("hidden");
+    TrendingGifosSection.classList.remove("hidden");
     renderMyGifos();
 }
 
@@ -63,7 +64,7 @@ function renderMyGifos() {
         let container = document.createElement("div");
         container.classList.add("container");
         MyGifosSection.appendChild(container);
-        for (let i = 1; i < MyGifosArray.length; i++) {
+        for (let i = 0; i < MyGifosArray.length; i++) {
             let gifou = document.createElement("div")
             gifou.classList.add("gifo");
             gifou.innerHTML = `<img src="${MyGifosArray[i].url}" alt="${MyGifosArray[i].title}">
