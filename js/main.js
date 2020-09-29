@@ -108,6 +108,7 @@ ButtonFavs.addEventListener("click", () => {
   FavSection.classList.remove("hidden")
   MaxSection.classList.add("hidden");
   CreateSection.classList.add("hidden");
+  MyGifosSection.classList.add("hidden");
   TrendingGifosSection.classList.remove("hidden");
   if (burgerOpen == true) {
     NavUL.style.display = "none";

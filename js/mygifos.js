@@ -46,8 +46,8 @@ function takeUserToMyGifos() {
 function renderMyGifos() {
     MyGifosSection.innerHTML = `<img src="assets/icon-mis-gifos.svg" alt="Mis GIFOS"> 
     <h4>Mis GIFOS</h4>
-    <button class="volver">VOLVER</button>`;
-    document.querySelector(".volver").addEventListener("click", () => {
+    <button class="volver2">VOLVER</button>`;
+    document.querySelector(".volver2").addEventListener("click", () => {
         MaxSection.classList.add("hidden");
         HeroSection.classList.remove("hidden");
         MyGifosSection.classList.add("hidden");
@@ -96,7 +96,7 @@ function renderMyGifos() {
             //remove
             buttons[0].addEventListener("click", () => {
                 console.log("Borrando GIFO: " + gifou.querySelector(".gifo_title").innerHTML)
-                MyGifos.splice(i, 1);
+                MyGifosArray.splice(i, 1);
                 localStorage.setItem("MYGIFOS", JSON.stringify(MyGifosArray));
                 renderMyGifos();
             })
