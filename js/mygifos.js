@@ -40,6 +40,7 @@ function takeUserToMyGifos() {
     HeroSection.classList.add("hidden");
     MaxSection.classList.add("hidden");
     SearchSection.classList.add("hidden");
+    renderMyGifos();
 }
 
 //!RENDER MY GIFOS
