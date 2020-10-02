@@ -79,6 +79,7 @@ async function getStreamAndRecord() {
                         await fetch("https://upload.giphy.com/v1/gifs", {
                             method: 'POST',
                             body: form,
+                            mode: 'cors'
                         })
                             .then(response => {
                                 return response.json();

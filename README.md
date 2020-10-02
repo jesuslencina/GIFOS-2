@@ -20,10 +20,9 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 
 - Night-Friendly browsing: Too much light? Choose "Modo Nocturno" from the navigation bar (Burger menu if you're on the phone), and browse in a less eye-painful way. You can go light again anytime. The site will remember your choice!
 
-## TODO:
+- Download your favorite GIFOS to your device, so you can share them anywhere!
 
-- Download GIFOS feature
-- Create GIFOS feature
+- Create your own GIFOS from your webcam, and show them to the world with the upload feature!
 
 ## Technologies used for this project:
 
@@ -43,5 +42,3 @@ Developed by me. Special thanks to my mentor, [@ivanenoriega](https://github.com
 
 - **Github** to publish the repository
 - **Netlify** to publish the live website
-
-## Last Update to this file: 26th of September 
